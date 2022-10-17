@@ -1,0 +1,49 @@
+// Bootstrap Sass
+@import "~bootstrap/scss/_functions";
+@import "~bootstrap/scss/_variables";
+
+// Customs
+@import "variables";
+@import "classes";
+
+// Fonts
+@import "../fonts/sf_pro/stylesheet.css"; // SF PRO Display
+@import "../fonts/dana/stylesheet.css"; // Dana Fa Nums
+
+// Boostrap Core
+@import "~bootstrap/scss/bootstrap";
+
+.ff-dana {
+    font-family: Dana;
+
+    .lh-xs {
+        line-height: 1.4em !important;
+    }
+
+    .lh-s {
+        line-height: 1.7em !important;
+    }
+
+    .lh-m {
+        line-height: 1.85em !important;
+    }
+
+    .lh-l {
+        line-height: 1.9em !important;
+    }
+
+    .ca-link {
+        border-width: 1px;
+        padding-bottom: 0;
+    }
+}
+
+.ca-link {
+    border-bottom: 2px solid #000;
+    padding-bottom: 2px;
+}
+
+// Temporary
+body {
+    background: #f4f7fe;
+}

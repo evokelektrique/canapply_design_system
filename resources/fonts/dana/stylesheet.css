@@ -1,0 +1,20 @@
+@font-face {
+    font-family: Dana;
+    src: url("./DanaFaNum-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Dana-medium";
+    src: url("./DanaFaNum-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DanaFat";
+    src: url("./DanaFaNum-Fat.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DanaBold";
+    src: url("./DanaFaNum-Bold.ttf") format("truetype");
+    font-weight: 500;
+}

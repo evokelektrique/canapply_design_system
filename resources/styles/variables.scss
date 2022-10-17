@@ -1,0 +1,65 @@
+//
+// Font sizes
+//
+
+$font-family-base: "SF Pro Display";
+$font-size-base: 14px !default;
+
+// Headings
+$h1-font-size: 20px;
+$h2-font-size: 18px;
+$h3-font-size: 16px;
+$h4-font-size: 14px;
+$h5-font-size: 12px;
+$h6-font-size: 10px;
+
+// XL Headings
+$font-size-xl-1: 88px;
+$font-size-xl-2: 64px;
+$font-size-xl-3: 48px;
+$font-size-xl-4: 32px;
+$font-size-xl-5: 28px;
+$font-size-xl-6: 24px;
+
+$font-sizes: (
+    1: $h1-font-size,
+    2: $h2-font-size,
+    3: $h3-font-size,
+    4: $h4-font-size,
+    5: $h5-font-size,
+    6: $h6-font-size,
+
+    xl-1: $font-size-xl-1,
+    xl-2: $font-size-xl-2,
+    xl-3: $font-size-xl-3,
+    xl-4: $font-size-xl-4,
+    xl-5: $font-size-xl-5,
+    xl-6: $font-size-xl-6,
+);
+
+// Line heights
+
+$line-height-base: 1.5;
+$line-height-sm: 1.25;
+
+$line-height-xs: 1;
+$line-height-s: 1.25;
+$line-height-m: 1.5;
+$line-height-l: 1.6;
+
+//
+// Utils
+//
+
+$utilities: (
+    "line-height": (
+        property: line-height,
+        class: lh,
+        values: (
+            xs: $line-height-xs,
+            s: $line-height-s,
+            m: $line-height-m,
+            l: $line-height-l,
+        ),
+    ),
+);
