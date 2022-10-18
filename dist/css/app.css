@@ -435,9 +435,9 @@
   --bs-border-style: solid;
   --bs-border-color: #dee2e6;
   --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
-  --bs-border-radius: 0.375rem;
-  --bs-border-radius-sm: 0.25rem;
-  --bs-border-radius-lg: 0.5rem;
+  --bs-border-radius: 12px;
+  --bs-border-radius-sm: 8px;
+  --bs-border-radius-lg: 16px;
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
@@ -640,7 +640,7 @@ kbd {
   font-size: 0.875em;
   color: var(--bs-body-bg);
   background-color: var(--bs-body-color);
-  border-radius: 0.25rem;
+  border-radius: 8px;
 }
 kbd kbd {
   padding: 0;
@@ -9192,7 +9192,7 @@ textarea.form-control-lg {
   color: #000;
   background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
   border: 0;
-  border-radius: 0.375rem;
+  border-radius: 12px;
   opacity: 0.5;
 }
 .btn-close:hover {
@@ -14069,7 +14069,7 @@ textarea.form-control-lg {
 }
 
 .rounded {
-  border-radius: var(--bs-border-radius) !important;
+  border-radius: 12px !important;
 }
 
 .rounded-0 {
@@ -14077,23 +14077,15 @@ textarea.form-control-lg {
 }
 
 .rounded-1 {
-  border-radius: var(--bs-border-radius-sm) !important;
+  border-radius: 8px !important;
 }
 
 .rounded-2 {
-  border-radius: var(--bs-border-radius) !important;
+  border-radius: 12px !important;
 }
 
 .rounded-3 {
-  border-radius: var(--bs-border-radius-lg) !important;
-}
-
-.rounded-4 {
-  border-radius: var(--bs-border-radius-xl) !important;
-}
-
-.rounded-5 {
-  border-radius: var(--bs-border-radius-2xl) !important;
+  border-radius: 16px !important;
 }
 
 .rounded-circle {
@@ -14101,7 +14093,7 @@ textarea.form-control-lg {
 }
 
 .rounded-pill {
-  border-radius: var(--bs-border-radius-pill) !important;
+  border-radius: 50rem !important;
 }
 
 .rounded-top {

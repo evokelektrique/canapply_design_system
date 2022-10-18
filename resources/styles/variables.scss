@@ -271,10 +271,32 @@ $btn-padding-y: 10px;
 $btn-padding-y-lg: 12px;
 
 //
+// Border radius
+//
+
+$border-radius-sm:            8px;
+$border-radius:               12px;
+$border-radius-lg:            16px;
+$border-radius-pill:          50rem;
+
+//
 // Utils
 //
 
 $utilities: (
+    "rounded": (
+        property: border-radius,
+        class: rounded,
+        values: (
+            null: $border-radius,
+            0: 0,
+            1: $border-radius-sm,
+            2: $border-radius,
+            3: $border-radius-lg,
+            circle: 50%,
+            pill: $border-radius-pill,
+        ),
+    ),
     "line-height": (
         property: line-height,
         class: lh,
