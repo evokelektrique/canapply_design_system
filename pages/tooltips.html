@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>CanApply - Design System - Icons</title>
+        <title>CanApply - Design System - Tooltips</title>
         <link rel="stylesheet" href="../dist/css/app.css" />
     </head>
     <body class="d-flex flex-column h-100">
@@ -14,7 +14,7 @@
                 <header
                     class="fs-xl-1 fw-bold justify-content-between d-flex align-items-center"
                 >
-                    <strong>Icons</strong>
+                    <strong>Tooltips</strong>
 
                     <svg
                         width="116"
@@ -73,25 +73,46 @@
                 <!-- Divider -->
                 <hr class="mt-5" />
 
-                <div class="container-fluid mt-5 d-flex justify-content-between">
-                    <div class="mx-5">
-                        <i class="ms-Icon ms-Icon--HomeGroup fs-xl-1"></i>
-                    </div>
-                    <div class="mx-5">
-                        <i class="ms-Icon ms-Icon--AddConnection fs-xl-1"></i>
-                    </div>
-                    <div class="mx-5">
-                        <i class="ms-Icon ms-Icon--BoxCheckmarkSolid fs-xl-1"></i>
-                    </div>
-                    <div class="mx-5">
-                        <i class="ms-Icon ms-Icon--Clear fs-xl-1"></i>
-                    </div>
-                    <div class="mx-5">
-                        <i class="ms-Icon ms-Icon--CubeShape fs-xl-1"></i>
-                    </div>
+                <div
+                    class="container-fluid d-flex justify-content-start align-items-center"
+                >
+                    <button
+                        type="button"
+                        class="btn btn-indigo me-4"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="top"
+                        title="Tooltip on top"
+                    >
+                        Tooltip on top
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-indigo me-4"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="right"
+                        title="Tooltip on right"
+                    >
+                        Tooltip on right
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-indigo me-4"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        title="Tooltip on bottom"
+                    >
+                        Tooltip on bottom
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-indigo me-4"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="left"
+                        title="Tooltip on left"
+                    >
+                        Tooltip on left
+                    </button>
                 </div>
-
-
             </div>
         </div>
 
@@ -99,7 +120,7 @@
             <!-- Divider -->
             <hr class="mt-5" />
 
-            CanApply Design System (v1.0) - <strong>Icons</strong>
+            CanApply Design System (v1.0) - <strong>Tooltips</strong>
         </footer>
     </body>
 
