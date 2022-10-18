@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/evokelektrique/canapply_design_system#readme",
   "dependencies": {
+    "@fluentui/svg-icons": "^1.1.185",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.2",
     "laravel-mix": "^6.0.49",

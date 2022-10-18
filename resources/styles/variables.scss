@@ -5,7 +5,10 @@
 $font-family-base: "SF Pro Display";
 $font-size-base: 14px !default;
 
+//
 // Headings
+//
+
 $h1-font-size: 20px;
 $h2-font-size: 18px;
 $h3-font-size: 16px;
@@ -13,7 +16,10 @@ $h4-font-size: 14px;
 $h5-font-size: 12px;
 $h6-font-size: 10px;
 
+//
 // XL Headings
+//
+
 $font-size-xl-1: 88px;
 $font-size-xl-2: 64px;
 $font-size-xl-3: 48px;
@@ -37,15 +43,193 @@ $font-sizes: (
     xl-6: $font-size-xl-6,
 );
 
-// Line heights
+//
+// Line height
+//
 
 $line-height-base: 1.5;
-$line-height-sm: 1.25;
-
 $line-height-xs: 1;
 $line-height-s: 1.25;
 $line-height-m: 1.5;
 $line-height-l: 1.6;
+
+//
+// Colors
+//
+
+// Basics
+$blue: #6687ff;
+$blue-100: #f0f3ff;
+$blue-200: #e0e7ff;
+$blue-300: #d1dbff;
+$blue-400: #b3c3ff;
+$blue-500: #526ccc;
+$blue-600: #3d5199;
+$blue-700: #293666;
+
+$indigo: #704dff;
+$indigo-100: #f1edff;
+$indigo-200: #e2dbff;
+$indigo-300: #d4caff;
+$indigo-400: #b8a6ff;
+$indigo-500: #5a3ecc;
+$indigo-600: #432e99;
+$indigo-700: #2d1f66;
+
+$yellow: #ffdb4d;
+$yellow-100: #fffbed;
+$yellow-200: #fff8db;
+$yellow-300: #fff4ca;
+$yellow-400: #ffeda6;
+$yellow-500: #ccaf3e;
+$yellow-600: #99832e;
+$yellow-700: #66581f;
+
+$red: #ff734d;
+$red-100: #fff1ed;
+$red-200: #ffe3db;
+$red-300: #ffd5ca;
+$red-400: #ffb9a6;
+$red-500: #cc5c3e;
+$red-600: #99452e;
+$red-700: #662e1f;
+
+$pale: #ffdec0;
+$pale-100: #fffcf9;
+$pale-200: #fff8f2;
+$pale-300: #fff5ec;
+$pale-400: #ffefe0;
+$pale-500: #ccb29a;
+$pale-600: #998573;
+$pale-700: #66594d;
+
+$green: #3dcc9c;
+$green-100: #ecfaf5;
+$green-200: #d8f5eb;
+$green-300: #c5f0e1;
+$green-400: #9ee6ce;
+$green-500: #31a37d;
+$green-600: #257a5e;
+$green-700: #18523e;
+
+$light: #fbfbfb;
+$light-100: #f0f0f0;
+$light-200: #e4e4e5;
+$light-300: #d9d9da;
+
+$dark: #36393d;
+$dark-100: #afb0b1;
+$dark-200: #86888b;
+$dark-300: #5e6164;
+
+$grey-light: #dbdbdb;
+$grey-base: #cccccc;
+$grey-dark: #8f8f8f;
+
+// Pallete
+$primary-light: #6da6f2;
+$primary-base: #2f80ed;
+$primary-dark: #215aa6;
+
+$danger-light: #e66980;
+$danger-base: #db294a;
+$danger-dark: #991d34;
+
+$success-light: #51beab;
+$success-base: #07a287;
+$success-dark: #05715f;
+
+$warning-light: #ffc45b;
+$warning-base: #ffaa15;
+$warning-dark: #b3770f;
+
+$custom-theme-colors: (
+    "primary-light": $primary-light,
+    "primary": $primary-base,
+    "primary-dark": $primary-dark,
+
+    "danger-light": $danger-light,
+    "danger": $danger-base,
+    "danger-dark": $danger-dark,
+
+    "success-light": $success-light,
+    "success": $success-base,
+    "success-dark": $success-dark,
+
+    "warning-light": $warning-light,
+    "warning": $warning-base,
+    "warning-dark": $warning-dark,
+
+    "grey-light": $grey-light,
+    "grey": $grey-base,
+    "grey-dark": $grey-dark,
+
+    "blue": $blue,
+    "blue-100": $blue-100,
+    "blue-200": $blue-200,
+    "blue-300": $blue-300,
+    "blue-400": $blue-400,
+    "blue-500": $blue-500,
+    "blue-600": $blue-600,
+    "blue-700": $blue-700,
+
+    "indigo": $indigo,
+    "indigo-100": $indigo-100,
+    "indigo-200": $indigo-200,
+    "indigo-300": $indigo-300,
+    "indigo-400": $indigo-400,
+    "indigo-500": $indigo-500,
+    "indigo-600": $indigo-600,
+    "indigo-700": $indigo-700,
+
+    "yellow": $yellow,
+    "yellow-100": $yellow-100,
+    "yellow-200": $yellow-200,
+    "yellow-300": $yellow-300,
+    "yellow-400": $yellow-400,
+    "yellow-500": $yellow-500,
+    "yellow-600": $yellow-600,
+    "yellow-700": $yellow-700,
+
+    "red": $red,
+    "red-100": $red-100,
+    "red-200": $red-200,
+    "red-300": $red-300,
+    "red-400": $red-400,
+    "red-500": $red-500,
+    "red-600": $red-600,
+    "red-700": $red-700,
+
+    "pale": $pale,
+    "pale-100": $pale-100,
+    "pale-200": $pale-200,
+    "pale-300": $pale-300,
+    "pale-400": $pale-400,
+    "pale-500": $pale-500,
+    "pale-600": $pale-600,
+    "pale-700": $pale-700,
+
+    "green": $green,
+    "green-100": $green-100,
+    "green-200": $green-200,
+    "green-300": $green-300,
+    "green-400": $green-400,
+    "green-500": $green-500,
+    "green-600": $green-600,
+    "green-700": $green-700,
+
+    "dark": $dark,
+    "dark-100": $dark-100,
+    "dark-200": $dark-200,
+    "dark-300": $dark-300,
+
+    "light": $light,
+    "light-100": $light-100,
+    "light-200": $light-200,
+    "light-300": $light-300,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);
 
 //
 // Utils
