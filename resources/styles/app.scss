@@ -43,6 +43,11 @@
     padding-bottom: 2px;
 }
 
+.squircle {
+    mask-image: paint(smooth-corners);
+    -webkit-mask-image: paint(smooth-corners);
+}
+
 // Temporary
 body {
     background: #f4f7fe;

@@ -304,20 +304,98 @@
                 <div
                     class="container-fluid d-flex justify-content-start align-items-center"
                 >
-                    <button type="submit" class="btn btn-warning-light rounded-1 me-4">
+                    <button
+                        type="submit"
+                        class="btn btn-warning-light rounded-1 me-4"
+                    >
                         Button radius sm
                     </button>
 
-                    <button type="submit" class="btn btn-warning-light rounded-2 me-4">
+                    <button
+                        type="submit"
+                        class="btn btn-warning-light rounded-2 me-4"
+                    >
                         Button radius md
                     </button>
 
-                    <button type="submit" class="btn btn-warning-light rounded-3 me-4">
+                    <button
+                        type="submit"
+                        class="btn btn-warning-light rounded-3 me-4"
+                    >
                         Button radius lg
                     </button>
 
-                    <button type="submit" class="btn btn-warning-light rounded-pill me-4">
+                    <button
+                        type="submit"
+                        class="btn btn-warning-light rounded-pill me-4"
+                    >
                         Button radius pill
+                    </button>
+                </div>
+
+                <!-- Divider -->
+                <hr class="mt-5" />
+
+                <div
+                    class="container-fluid d-flex justify-content-start align-items-center"
+                >
+                    <button
+                        type="submit"
+                        class="btn btn-warning-light squircle smooth-corner-sm me-4"
+                    >
+                        Button smooth corner sm
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-warning-light squircle smooth-corner-md me-4"
+                    >
+                        Button smooth corner md
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-warning-light squircle smooth-corner-lg me-4"
+                    >
+                        Button smooth corner lg
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-warning-light squircle smooth-corner-xl me-4"
+                    >
+                        Button smooth corner xl
+                    </button>
+                </div>
+                <div
+                    class="container-fluid d-flex justify-content-start align-items-center mt-2"
+                >
+                    <button
+                        type="submit"
+                        class="btn btn-warning-light squircle smooth-corner-sm me-4"
+                    >
+                        Button
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-warning-light squircle smooth-corner-md me-4"
+                    >
+                        Button
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-warning-light squircle smooth-corner-lg me-4"
+                    >
+                        Button
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-warning-light squircle smooth-corner-xl me-4"
+                    >
+                        Button
                     </button>
                 </div>
             </div>
@@ -331,5 +409,9 @@
         </footer>
     </body>
 
+    <script>
+        if (CSS && "paintWorklet" in CSS)
+            CSS.paintWorklet.addModule("https://unpkg.com/smooth-corners");
+    </script>
     <script src="../dist/js/app.js"></script>
 </html>

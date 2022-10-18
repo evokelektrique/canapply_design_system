@@ -307,4 +307,14 @@ $utilities: (
             l: $line-height-l,
         ),
     ),
+    "smooth-corner": (
+        property: --smooth-corners,
+        class: smooth-corner,
+        values: (
+            sm: 13,
+            md: 9,
+            lg: 6,
+            xl: 3,
+        ),
+    ),
 );

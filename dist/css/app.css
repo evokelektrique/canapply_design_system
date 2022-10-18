@@ -14124,6 +14124,22 @@ textarea.form-control-lg {
   visibility: hidden !important;
 }
 
+.smooth-corner-sm {
+  --smooth-corners: 13 !important;
+}
+
+.smooth-corner-md {
+  --smooth-corners: 9 !important;
+}
+
+.smooth-corner-lg {
+  --smooth-corners: 6 !important;
+}
+
+.smooth-corner-xl {
+  --smooth-corners: 3 !important;
+}
+
 @media (min-width: 576px) {
   .float-sm-start {
     float: left !important;
@@ -16679,6 +16695,11 @@ textarea.form-control-lg {
 .ca-link {
   border-bottom: 2px solid #000;
   padding-bottom: 2px;
+}
+
+.squircle {
+  mask-image: paint(smooth-corners);
+  -webkit-mask-image: paint(smooth-corners);
 }
 
 body {
