@@ -72,6 +72,28 @@
     }
 }
 
+.btn-default {
+    &:hover {
+        background-color: $indigo-600;
+    }
+
+    &:acitve {
+        background-color: $indigo-700;
+    }
+
+    &:focus {
+        background-color: $indigo-700;
+        color: $white;
+    }
+}
+
+.btn {
+    &[disabled] {
+        color: $grey-dark !important;
+        opacity: 1 !important;
+    }
+}
+
 // Temporary
 body {
     background: #f4f7fe;

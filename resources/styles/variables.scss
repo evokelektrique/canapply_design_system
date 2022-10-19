@@ -72,9 +72,10 @@ $indigo-100: #f1edff;
 $indigo-200: #e2dbff;
 $indigo-300: #d4caff;
 $indigo-400: #b8a6ff;
-$indigo-500: #5a3ecc;
-$indigo-600: #432e99;
-$indigo-700: #2d1f66;
+$indigo-500: #6E4AFF;
+$indigo-600: #5a3ecc;
+$indigo-700: #432e99;
+$indigo-800: #2d1f66;
 
 $yellow: #ffdb4d;
 $yellow-100: #fffbed;
@@ -311,7 +312,7 @@ $utilities: (
         property: --smooth-corners,
         class: smooth-corner,
         values: (
-            xs: 16,
+            xs: 15,
             sm: 13,
             md: 9,
             lg: 6,
