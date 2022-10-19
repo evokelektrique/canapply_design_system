@@ -9,12 +9,22 @@
 // Fonts & Icons
 @import "../fonts/sf_pro/stylesheet.css"; // FONT - SF PRO Display
 @import "../fonts/dana/stylesheet.css"; // FONT - Dana Fa Nums
+// ICON
+@import "../fonts/fluent/FluentSystemIcons-Resizable.css";
 
 // Boostrap Core
 @import "~bootstrap/scss/bootstrap";
+@import "~nice-select2/dist/css/nice-select2.css";
+
 
 .ca-fa {
     font-family: Dana;
+
+    &.rtl *,
+    &.rtl {
+        direction: rtl;
+        text-align: right;
+    }
 
     .lh-xs {
         line-height: 1.4em !important;
@@ -39,13 +49,27 @@
 }
 
 .ca-link {
-    border-bottom: 2px solid #000;
-    padding-bottom: 2px;
+    text-underline-offset: 5px;
 }
 
 .squircle {
     mask-image: paint(smooth-corners);
     -webkit-mask-image: paint(smooth-corners);
+}
+
+.nice-select {
+    padding-right: 35px;
+
+    .nice-select-dropdown {
+        margin-top: 8px;
+    }
+
+    &:after {
+        height: 12px;
+        width: 12px;
+        margin-top: -8px;
+        border-color: $dark;
+    }
 }
 
 // Temporary

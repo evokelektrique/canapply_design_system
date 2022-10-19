@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>CanApply - Design System - Icons</title>
+        <title>CanApply - Design System - Select</title>
         <link rel="stylesheet" href="../dist/css/app.css" />
     </head>
     <body class="d-flex flex-column h-100">
@@ -14,7 +14,7 @@
                 <header
                     class="fs-xl-1 fw-bold justify-content-between d-flex align-items-center"
                 >
-                    <strong>Icons</strong>
+                    <strong>Select</strong>
 
                     <svg
                         width="116"
@@ -73,34 +73,31 @@
                 <!-- Divider -->
                 <hr class="mt-5" />
 
-                <div class="container-fluid mt-5 d-flex justify-content-between">
-                    <div class="mx-5">
-                        <i class="icon-ic_fluent_archive_arrow_back_20_regular fs-xl-1"></i>
-                        <i class="icon-ic_fluent_archive_arrow_back_20_filled fs-xl-1"></i>
-                    </div>
-                    <div class="mx-5">
-                        <i class="icon-ic_fluent_box_20_regular fs-xl-1"></i>
-                        <i class="icon-ic_fluent_box_20_filled fs-xl-1"></i>
-                    </div>
-                    <div class="mx-5">
-                        <i class="icon-ic_fluent_stream_20_regular fs-xl-1"></i>
-                        <i class="icon-ic_fluent_stream_20_filled fs-xl-1"></i>
-                    </div>
-                    <div class="mx-5">
-                        <i class="icon-ic_fluent_calendar_agenda_20_regular fs-xl-1"></i>
-                        <i class="icon-ic_fluent_calendar_agenda_20_filled fs-xl-1"></i>
-                    </div>
-                    <div class="mx-5">
-                        <i class="icon-ic_fluent_bluetooth_20_regular fs-xl-1"></i>
-                        <i class="icon-ic_fluent_bluetooth_20_filled fs-xl-1"></i>
-                    </div>
-                    <div class="mx-5">
-                        <i class="icon-ic_fluent_view_desktop_20_regular fs-xl-1"></i>
-                        <i class="icon-ic_fluent_view_desktop_20_filled fs-xl-1"></i>
+                <div
+                    class="container-fluid d-flex justify-content-between align-items-center"
+                >
+                    <div class="col-4">
+                        Normal:
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Your text here ..."
+                        />
                     </div>
                 </div>
 
-
+                <div
+                    class="container-fluid d-flex justify-content-between align-items-center"
+                >
+                    <div class="col-4">
+                        Smoothed corners:
+                        <input
+                            type="text"
+                            class="form-control squircle smooth-corner-lg"
+                            placeholder="Your text here ..."
+                        />
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -108,7 +105,7 @@
             <!-- Divider -->
             <hr class="mt-5" />
 
-            CanApply Design System (v1.0) - <strong>Icons</strong>
+            CanApply Design System (v1.0) - <strong>Select</strong>
         </footer>
     </body>
 

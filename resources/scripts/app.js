@@ -1,5 +1,17 @@
 // Import all of Bootstrap's JS
 import * as bootstrap from "bootstrap";
+import NiceSelect from "nice-select2/dist/js/nice-select2";
+
+Array.from(document.querySelectorAll(".nice-select-search")).forEach(
+    (select) => {
+        new NiceSelect(select, { searchable: true });
+    }
+);
+
+Array.from(document.querySelectorAll(".nice-select")).forEach((select) => {
+    const s = new NiceSelect(select, { searchable: false });
+    console.log(s);
+});
 
 // Smooth corners
 CSS.paintWorklet.addModule(
