@@ -41,11 +41,6 @@
     .lh-l {
         line-height: 1.9em !important;
     }
-
-    .ca-link {
-        border-width: 1px;
-        padding-bottom: 0;
-    }
 }
 
 .ca-link {
@@ -56,6 +51,10 @@
     mask-image: paint(smooth-corners);
     -webkit-mask-image: paint(smooth-corners);
 }
+
+// .spinner-border {
+//     border-color: transparent;
+// }
 
 .nice-select {
     padding-right: 35px;

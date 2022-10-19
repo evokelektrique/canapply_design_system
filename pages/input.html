@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>CanApply - Design System - Select</title>
+        <title>CanApply - Design System - Input</title>
         <link rel="stylesheet" href="../dist/css/app.css" />
     </head>
     <body class="d-flex flex-column h-100">
@@ -14,7 +14,7 @@
                 <header
                     class="fs-xl-1 fw-bold justify-content-between d-flex align-items-center"
                 >
-                    <strong>Select</strong>
+                    <strong>Input</strong>
 
                     <svg
                         width="116"
@@ -76,26 +76,69 @@
                 <div
                     class="container-fluid d-flex justify-content-between align-items-center"
                 >
-                    <div class="col-4">
-                        Normal:
-                        <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Your text here ..."
-                        />
+                    <div class="col-3">
+                        <div class="m-4">
+                            <label for="example" class="form-label"
+                                >Email address</label
+                            >
+                            <input
+                                type="email"
+                                class="form-control rounded shadow-none"
+                                id="example"
+                                placeholder="name@example.com"
+                            />
+                            <div class="form-text text-primary fs-4">
+                                We'll never share your email with anyone else.
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div
-                    class="container-fluid d-flex justify-content-between align-items-center"
-                >
-                    <div class="col-4">
-                        Smoothed corners:
-                        <input
-                            type="text"
-                            class="form-control squircle smooth-corner-lg"
-                            placeholder="Your text here ..."
-                        />
+                    <div class="col-3">
+                        <div class="m-4">
+                            <label for="example" class="form-label text-success"
+                                >Email address</label
+                            >
+                            <input
+                                type="email"
+                                class="form-control rounded is-valid shadow-none"
+                                id="example"
+                                placeholder="name@example.com"
+                            />
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="m-4">
+                            <label for="example" class="form-label text-danger"
+                                >Email address</label
+                            >
+                            <input
+                                type="email"
+                                class="form-control rounded is-invalid shadow-none"
+                                id="example"
+                                placeholder="name@example.com"
+                            />
+                            <div class="invalid-feedback">Looks bad!</div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="m-4">
+                            <label for="example" class="form-label"
+                                >Email address</label
+                            >
+                            <input
+                                type="email"
+                                class="form-control rounded shadow-none"
+                                id="example"
+                                placeholder="name@example.com"
+                                disabled=""
+                            />
+                            <div class="form-text text-dark-400 fs-4">
+                                We'll never share your email with anyone else.
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -105,7 +148,7 @@
             <!-- Divider -->
             <hr class="mt-5" />
 
-            CanApply Design System (v1.0) - <strong>Select</strong>
+            CanApply Design System (v1.0) - <strong>Input</strong>
         </footer>
     </body>
 

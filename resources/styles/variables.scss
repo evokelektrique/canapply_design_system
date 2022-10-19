@@ -72,7 +72,7 @@ $indigo-100: #f1edff;
 $indigo-200: #e2dbff;
 $indigo-300: #d4caff;
 $indigo-400: #b8a6ff;
-$indigo-500: #6E4AFF;
+$indigo-500: #6e4aff;
 $indigo-600: #5a3ecc;
 $indigo-700: #432e99;
 $indigo-800: #2d1f66;
@@ -122,6 +122,7 @@ $dark: #36393d;
 $dark-100: #afb0b1;
 $dark-200: #86888b;
 $dark-300: #5e6164;
+$dark-400: #555555;
 
 $grey-light: #dbdbdb;
 $grey-base: #cccccc;
@@ -223,6 +224,7 @@ $custom-theme-colors: (
     "dark-100": $dark-100,
     "dark-200": $dark-200,
     "dark-300": $dark-300,
+    "dark-400": $dark-400,
 
     "light": $light,
     "light-100": $light-100,
@@ -271,14 +273,61 @@ $btn-padding-y-sm: 5px;
 $btn-padding-y: 10px;
 $btn-padding-y-lg: 12px;
 
+$btn-padding-x-sm: 16px;
+$btn-padding-x: 24px;
+$btn-padding-x-lg: 32px;
+
 //
 // Border radius
 //
 
-$border-radius-sm:            8px;
-$border-radius:               12px;
-$border-radius-lg:            16px;
-$border-radius-pill:          50rem;
+$border-radius-sm: 8px;
+$border-radius: 12px;
+$border-radius-lg: 16px;
+$border-radius-pill: 50rem;
+
+//
+// Input
+//
+
+$input-padding-y: 12px;
+$input-padding-y-sm: 12px;
+$input-padding-y-lg: 12px;
+
+$enable-validation-icons: false;
+
+$form-feedback-margin-top: 4px;
+$form-feedback-valid-color: $success-base;
+$form-feedback-invalid-color: $danger-base;
+$input-focus-border-color: $primary-base;
+
+$form-label-margin-bottom: 4px;
+$form-label-font-size: $h2-font-size;
+$form-label-font-weight: bold;
+$form-label-color: $dark;
+
+$form-text-font-size: $h2-font-size;
+$form-text-color: $dark-400;
+
+$input-disabled-bg: $light-200;
+$input-disabled-border-color: $light-200;
+
+$form-validation-states: (
+    "valid": (
+        "color": $form-feedback-valid-color,
+        "icon": $form-feedback-icon-valid,
+    ),
+    "invalid": (
+        "color": $form-feedback-invalid-color,
+        "icon": $form-feedback-icon-invalid,
+    ),
+);
+
+
+
+// $spinner-width:           0 ;
+// $spinner-width-sm:        0;
+// $spinner-border-width-sm: 0;
 
 //
 // Utils
