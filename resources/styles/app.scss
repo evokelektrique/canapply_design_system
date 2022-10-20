@@ -4,7 +4,6 @@
 
 // Customs
 @import "variables";
-@import "classes";
 
 // Fonts & Icons
 @import "../fonts/sf_pro/stylesheet.css"; // FONT - SF PRO Display
@@ -16,6 +15,8 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~nice-select2/dist/css/nice-select2.css";
 
+$flagsImagePath: "../../../../dist/images/";
+@import "~intl-tel-input/src/css/intlTelInput.scss";
 
 .ca-fa {
     font-family: Dana;
@@ -91,6 +92,55 @@
         color: $grey-dark !important;
         opacity: 1 !important;
     }
+}
+
+.iti__flag {
+    background-image: url("../images/flags2.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .iti__flag {
+        background-image: url("../images/flags@2x.png");
+    }
+}
+.iti--separate-dial-code .iti__selected-flag,
+.iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag {
+    background-color: transparent;
+    transition: border-color 0.15s ease-in-out;
+}
+
+.iti--separate-dial-code .iti__selected-flag {
+    border-right: 1px solid $light-200;
+}
+
+.iti__country-list {
+    border-radius: $border-radius;
+    margin-top: 4px;
+}
+
+// Active
+.iti:focus-within .iti__flag-container .iti__selected-flag {
+    border-color: $primary-base;
+}
+
+.iti__flag-container .iti__selected-flag:focus {
+    border-color: $light-200 !important;
+}
+
+.iti:has(.is-valid) .iti__flag-container .iti__selected-flag {
+    border-color: $success-base !important;
+}
+
+.iti:has(.is-invalid) .iti__flag-container .iti__selected-flag {
+    border-color: $danger-base !important;
+}
+
+.ca-phone-input {
+    padding-left: 94px !important;
+}
+
+.iti {
+    width: 100%;
 }
 
 // Temporary

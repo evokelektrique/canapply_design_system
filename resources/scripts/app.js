@@ -1,6 +1,40 @@
 // Import all of Bootstrap's JS
 import * as bootstrap from "bootstrap";
 import NiceSelect from "nice-select2/dist/js/nice-select2";
+import intlTelInput from "intl-tel-input";
+
+const phone_inputs = document.querySelectorAll(".ca-phone-input");
+Array.from(phone_inputs).forEach((input) => {
+    const default_country =
+        input.dataset.country === undefined ? "CA" : input.dataset.country;
+
+    intlTelInput(input, {
+        initialCountry: default_country,
+        separateDialCode: true,
+    });
+
+    input.addEventListener("input", (e) => {
+        e.preventDefault();
+
+        // Strip everything but 1st 10 digits
+        e.target.value = e.target.value.replace(/\D/g, "").substring(0, 10);
+
+        // var size = e.target.value.length;
+        // if (size > 0) {
+        //     e.target.value = " " + e.target.value;
+        // }
+        // if (size > 3) {
+        //     e.target.value =
+        //         e.target.value.slice(0, 4) + "  " + e.target.value.slice(4);
+        // }
+        // if (size > 6) {
+        //     e.target.value =
+        //         e.target.value.slice(0, 9) + " " + e.target.value.slice(9);
+        // }
+
+        return e.target.value;
+    });
+});
 
 Array.from(document.querySelectorAll(".nice-select-search")).forEach(
     (select) => {

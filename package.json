@@ -25,6 +25,7 @@
     "@fluentui/svg-icons": "^1.1.185",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.2",
+    "intl-tel-input": "^17.0.19",
     "laravel-mix": "^6.0.49",
     "nice-select2": "^2.0.0",
     "office-ui-fabric-core": "^11.0.1",
