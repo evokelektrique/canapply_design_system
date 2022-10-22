@@ -114,16 +114,18 @@ $green-600: #257a5e;
 $green-700: #18523e;
 
 $light: #fbfbfb;
-$light-100: #f6f6f6;
-$light-200: #f0f0f0;
-$light-300: #e4e4e5;
-$light-400: #d9d9da;
+$light-100: #F1F4FE;
+$light-200: #f6f6f6;
+$light-300: #f0f0f0;
+$light-400: #e4e4e5;
+$light-500: #d9d9da;
 
 $dark: #36393d;
 $dark-100: #afb0b1;
 $dark-200: #86888b;
 $dark-300: #5e6164;
 $dark-400: #555555;
+$dark-500: #777777; // Wrong, needs ordering
 
 $grey-light: #dbdbdb;
 $grey-base: #cccccc;
@@ -226,12 +228,14 @@ $custom-theme-colors: (
     "dark-200": $dark-200,
     "dark-300": $dark-300,
     "dark-400": $dark-400,
+    "dark-500": $dark-500,
 
     "light": $light,
     "light-100": $light-100,
     "light-200": $light-200,
     "light-300": $light-300,
     "light-400": $light-400,
+    "light-500": $light-500,
 );
 
 $theme-colors: map-merge($theme-colors, $custom-theme-colors);
