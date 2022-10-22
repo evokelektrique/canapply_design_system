@@ -114,9 +114,10 @@ $green-600: #257a5e;
 $green-700: #18523e;
 
 $light: #fbfbfb;
-$light-100: #f0f0f0;
-$light-200: #e4e4e5;
-$light-300: #d9d9da;
+$light-100: #F6F6F6;
+$light-200: #f0f0f0;
+$light-300: #e4e4e5;
+$light-400: #d9d9da;
 
 $dark: #36393d;
 $dark-100: #afb0b1;
@@ -230,6 +231,7 @@ $custom-theme-colors: (
     "light-100": $light-100,
     "light-200": $light-200,
     "light-300": $light-300,
+    "light-400": $light-400,
 );
 
 $theme-colors: map-merge($theme-colors, $custom-theme-colors);
@@ -309,8 +311,8 @@ $form-label-color: $dark;
 $form-text-font-size: $h2-font-size;
 $form-text-color: $dark-400;
 
-$input-disabled-bg: $light-200;
-$input-disabled-border-color: $light-200;
+$input-disabled-bg: $light-300;
+$input-disabled-border-color: $light-300;
 
 $form-validation-states: (
     "valid": (
