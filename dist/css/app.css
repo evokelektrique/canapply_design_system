@@ -12829,7 +12829,7 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
   --bs-dark-200: #86888b;
   --bs-dark-300: #5e6164;
   --bs-dark-400: #555555;
-  --bs-light-100: #F6F6F6;
+  --bs-light-100: #f6f6f6;
   --bs-light-200: #f0f0f0;
   --bs-light-300: #e4e4e5;
   --bs-light-400: #d9d9da;
@@ -16857,8 +16857,8 @@ textarea.form-control-lg {
 
 .btn-light-100 {
   --bs-btn-color: #000;
-  --bs-btn-bg: #F6F6F6;
-  --bs-btn-border-color: #F6F6F6;
+  --bs-btn-bg: #f6f6f6;
+  --bs-btn-border-color: #f6f6f6;
   --bs-btn-hover-color: #000;
   --bs-btn-hover-bg: #f7f7f7;
   --bs-btn-hover-border-color: #f7f7f7;
@@ -16868,8 +16868,8 @@ textarea.form-control-lg {
   --bs-btn-active-border-color: #f7f7f7;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #F6F6F6;
-  --bs-btn-disabled-border-color: #F6F6F6;
+  --bs-btn-disabled-bg: #f6f6f6;
+  --bs-btn-disabled-border-color: #f6f6f6;
 }
 
 .btn-light-200 {
@@ -18131,19 +18131,19 @@ textarea.form-control-lg {
 }
 
 .btn-outline-light-100 {
-  --bs-btn-color: #F6F6F6;
-  --bs-btn-border-color: #F6F6F6;
+  --bs-btn-color: #f6f6f6;
+  --bs-btn-border-color: #f6f6f6;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #F6F6F6;
-  --bs-btn-hover-border-color: #F6F6F6;
+  --bs-btn-hover-bg: #f6f6f6;
+  --bs-btn-hover-border-color: #f6f6f6;
   --bs-btn-focus-shadow-rgb: 246, 246, 246;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #F6F6F6;
-  --bs-btn-active-border-color: #F6F6F6;
+  --bs-btn-active-bg: #f6f6f6;
+  --bs-btn-active-border-color: #f6f6f6;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #F6F6F6;
+  --bs-btn-disabled-color: #f6f6f6;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #F6F6F6;
+  --bs-btn-disabled-border-color: #f6f6f6;
   --bs-gradient: none;
 }
 
@@ -24153,7 +24153,7 @@ textarea.form-control-lg {
 }
 
 .link-light-100 {
-  color: #F6F6F6 !important;
+  color: #f6f6f6 !important;
 }
 .link-light-100:hover, .link-light-100:focus {
   color: #f8f8f8 !important;
@@ -30587,6 +30587,30 @@ textarea.form-control-lg {
 
 .btn[disabled] {
   opacity: 1 !important;
+}
+
+.has-icon {
+  position: relative;
+}
+.has-icon .form-control {
+  padding-left: 2.375rem;
+}
+.has-icon:has(.input-icon-right) .form-control {
+  padding-right: 2.375rem;
+}
+.has-icon i {
+  position: absolute;
+  top: 0;
+  width: 45px;
+  z-index: 2;
+  height: 100%;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.has-icon i.input-icon-right {
+  right: 0;
 }
 
 .iti__flag {
