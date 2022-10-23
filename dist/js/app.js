@@ -3266,6 +3266,76 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+function normal_modal(event, modal) {
+  var default_icon_class = "modal-icon fs-xl-3 d-flex ";
+  var button = event.relatedTarget;
+  var title = button.getAttribute("data-modal-title");
+  var body = button.getAttribute("data-modal-body");
+  var icon = button.getAttribute("data-modal-icon");
+  var hide_icon = button.getAttribute("data-modal-hidden-icon");
+  var button_text = button.getAttribute("data-modal-button-text");
+  var button_dismiss_text = button.getAttribute("data-modal-button-dismiss-text");
+  // const href = button.getAttribute("data-href");
+
+  var modal_title = modal.querySelector(".modal-title");
+  var modal_body = modal.querySelector(".modal-body .message");
+  var modal_icon_wrapper = modal.querySelector(".modal-icon-wrapper");
+  var modal_icon = modal.querySelector(".modal-icon");
+  var modal_ok_button = modal.querySelector(".button-ok");
+  var modal_dismiss_button = modal.querySelector(".button-dismiss");
+
+  // if(href !== null) {
+  //     fetch()
+  // }
+
+  if (button_dismiss_text !== null) {
+    modal_dismiss_button.innerHTML = button_dismiss_text;
+  }
+  if (button_text !== null) {
+    modal_ok_button.innerHTML = button_text;
+  }
+
+  // Hide Icon
+  if (hide_icon !== null) {
+    modal_icon_wrapper.classList.add("d-none");
+  }
+
+  // Change Icon
+  if (icon !== null) {
+    var icon_class = default_icon_class + icon;
+    modal_icon.classList = icon_class;
+  }
+
+  // Change Title
+  modal_title.innerHTML = title;
+
+  // Change Body
+  modal_body.innerHTML = body;
+}
+var success_modal = document.getElementById("success_modal");
+var warning_modal = document.getElementById("warning_modal");
+var error_modal = document.getElementById("error_modal");
+var info_modal = document.getElementById("info_modal");
+if (info_modal) {
+  info_modal.addEventListener("show.bs.modal", function (event) {
+    return normal_modal(event, info_modal);
+  });
+}
+if (error_modal) {
+  error_modal.addEventListener("show.bs.modal", function (event) {
+    return normal_modal(event, error_modal);
+  });
+}
+if (warning_modal) {
+  warning_modal.addEventListener("show.bs.modal", function (event) {
+    return normal_modal(event, warning_modal);
+  });
+}
+if (success_modal) {
+  success_modal.addEventListener("show.bs.modal", function (event) {
+    return normal_modal(event, success_modal);
+  });
+}
 var phone_inputs = document.querySelectorAll(".ca-phone-input");
 Array.from(phone_inputs).forEach(function (input) {
   var default_country = input.dataset.country === undefined ? "CA" : input.dataset.country;

@@ -29,7 +29,8 @@
     "laravel-mix": "^6.0.49",
     "nice-select2": "^2.0.0",
     "office-ui-fabric-core": "^11.0.1",
-    "smooth-corners": "^1.0.8"
+    "smooth-corners": "^1.0.8",
+    "sweetalert2": "^11.6.1"
   },
   "devDependencies": {
     "resolve-url-loader": "^5.0.0",
