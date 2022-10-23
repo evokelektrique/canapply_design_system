@@ -114,7 +114,7 @@ $green-600: #257a5e;
 $green-700: #18523e;
 
 $light: #fbfbfb;
-$light-100: #F1F4FE;
+$light-100: #f1f4fe;
 $light-200: #f6f6f6;
 $light-300: #f0f0f0;
 $light-400: #e4e4e5;
@@ -328,6 +328,14 @@ $form-validation-states: (
         "icon": $form-feedback-icon-invalid,
     ),
 );
+
+// Badges
+$badge-font-size: $h2-font-size;
+$badge-font-weight: $font-weight-normal;
+$badge-color: $white;
+$badge-padding-y: 5px;
+$badge-padding-x: 8px;
+$badge-border-radius: $border-radius-sm;
 
 //
 // Utils
