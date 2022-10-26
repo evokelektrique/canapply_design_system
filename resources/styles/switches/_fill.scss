@@ -1,0 +1,32 @@
+.#{$pretty--class-name}.p-switch.p-fill {
+    input[disabled] ~ .state {
+        &:before {
+            border-color: $grey-dark;
+        }
+
+        label:after {
+            background-color: $grey-dark;
+        }
+    }
+
+    input[disabled]:checked ~ .state {
+        &:before {
+            border-color: $grey-dark;
+            background-color: $grey-dark;
+        }
+    }
+
+    input:checked ~ .state {
+        &:before {
+            border-color: $indigo-500;
+            background-color: $indigo-500;
+        }
+        label:before {
+            opacity: 0;
+        }
+        label:after {
+            background-color: #fff;
+            left: 1.5em;
+        }
+    }
+}

@@ -3266,6 +3266,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+window.intlTelInput = (intl_tel_input__WEBPACK_IMPORTED_MODULE_2___default());
 function normal_modal(event, modal) {
   var default_icon_class = "modal-icon fs-xl-3 d-flex ";
   var button = event.relatedTarget;
