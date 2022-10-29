@@ -1,0 +1,38 @@
+.#{$pretty--class-name}.p-round {
+    .state label {
+        &:before,
+        &:after {
+            border-radius: 100%;
+        }
+    }
+
+    &.p-icon .state .icon {
+        border-radius: 100%;
+        overflow: hidden;
+
+        &:before {
+            transform: scale(0.8);
+        }
+    }
+
+    &.p-default input:checked ~ .state label:after {
+        background-color: $indigo-500 !important;
+    }
+
+    &.p-default input:checked ~ .state label:before {
+        border-color: $indigo-500 !important;
+    }
+
+    &.p-default input[disabled]:checked ~ .state label:after {
+        background-color: $grey-dark !important;
+    }
+
+    &.p-default input[disabled]:checked ~ .state label:before {
+        border-color: $grey-dark !important;
+    }
+
+
+    &.p-default .state label:after {
+        transform: scale(0.6);
+    }
+}

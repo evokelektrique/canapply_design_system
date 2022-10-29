@@ -12729,7 +12729,7 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 
 @charset "UTF-8";
 .ca-fa {
-  font-family: Dana;
+  font-family: Dana !important;
 }
 .ca-fa.rtl *, .ca-fa.rtl {
   direction: rtl;
@@ -31097,4 +31097,30 @@ textarea.form-control-lg {
 .pretty.p-icon input:checked ~ .state label:before {
   background-color: #6e4aff;
   border-color: #6e4aff;
+}
+
+.pretty.p-round .state label:before, .pretty.p-round .state label:after {
+  border-radius: 100%;
+}
+.pretty.p-round.p-icon .state .icon {
+  border-radius: 100%;
+  overflow: hidden;
+}
+.pretty.p-round.p-icon .state .icon:before {
+  transform: scale(0.8);
+}
+.pretty.p-round.p-default input:checked ~ .state label:after {
+  background-color: #6e4aff !important;
+}
+.pretty.p-round.p-default input:checked ~ .state label:before {
+  border-color: #6e4aff !important;
+}
+.pretty.p-round.p-default input[disabled]:checked ~ .state label:after {
+  background-color: #8f8f8f !important;
+}
+.pretty.p-round.p-default input[disabled]:checked ~ .state label:before {
+  border-color: #8f8f8f !important;
+}
+.pretty.p-round.p-default .state label:after {
+  transform: scale(0.6);
 }
