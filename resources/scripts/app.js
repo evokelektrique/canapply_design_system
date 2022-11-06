@@ -3,6 +3,7 @@ import * as bootstrap from "bootstrap";
 import NiceSelect from "nice-select2/dist/js/nice-select2";
 import intlTelInput from "intl-tel-input";
 window.intlTelInput = intlTelInput;
+window.bootstrap = bootstrap;
 
 function normal_modal(event, modal) {
     const default_icon_class = "modal-icon fs-xl-3 d-flex ";
