@@ -12762,7 +12762,7 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 .nice-select {
   padding-right: 45px;
   font-size: 18px;
-  color: #6c757d;
+  color: #495057;
   border-color: #dee2e6;
   border-radius: 12px;
   padding-top: 6.5px;
@@ -12772,15 +12772,16 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
   margin-top: 8px;
   box-shadow: 0px 8px 24px -4px rgba(27, 46, 94, 0.08);
   border-radius: 12px;
-  padding: 24px 16px;
+  padding: 16px;
   margin-bottom: 0;
   color: #495057;
 }
 .nice-select .option {
   border-radius: 12px;
-  margin: 8px 0;
-  padding: 8px 16px;
+  margin: 4px 0;
+  padding: 4px 16px;
   padding-right: 35px;
+  font-size: 16px;
 }
 .nice-select .option:hover, .nice-select .option.selected.focus {
   background-color: #f1f4fe;
@@ -12802,8 +12803,9 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
   content: "\e35e";
   font-size: 18px;
   position: absolute;
-  right: 16px;
-  top: 19px;
+  right: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
   color: #2f80ed;
 }
 .nice-select.ca-fa .list .option {
@@ -12814,17 +12816,32 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
   left: 16px;
 }
 .nice-select:after {
-  height: 12px;
-  width: 12px;
-  margin-top: -8px;
-  border-color: #343a40;
+  font-family: FluentSystemIcons-Resizable !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e37f";
+  font-size: 24px;
+  height: 24px;
+  width: 24px;
+  top: 16px;
   right: 20px;
+  border: none;
+  transform: rotate(0);
+  transform-origin: 12px;
+}
+.nice-select.open:after {
+  transform: rotate(-180deg);
 }
 
 .btn-default:hover {
   background-color: #5a3ecc;
 }
-.btn-default:acitve {
+.btn-default:active {
   background-color: #432e99;
 }
 .btn-default:focus {

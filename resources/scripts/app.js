@@ -14,7 +14,9 @@ function normal_modal(event, modal) {
     const icon = button.getAttribute("data-modal-icon");
     const hide_icon = button.getAttribute("data-modal-hidden-icon");
     const button_text = button.getAttribute("data-modal-button-text");
-    const button_dismiss_text = button.getAttribute("data-modal-button-dismiss-text");
+    const button_dismiss_text = button.getAttribute(
+        "data-modal-button-dismiss-text"
+    );
     // const href = button.getAttribute("data-href");
 
     const modal_title = modal.querySelector(".modal-title");
@@ -28,21 +30,21 @@ function normal_modal(event, modal) {
     //     fetch()
     // }
 
-    if(button_dismiss_text !== null) {
+    if (button_dismiss_text !== null) {
         modal_dismiss_button.innerHTML = button_dismiss_text;
     }
 
-    if(button_text !== null) {
+    if (button_text !== null) {
         modal_ok_button.innerHTML = button_text;
     }
 
     // Hide Icon
-    if(hide_icon !== null) {
+    if (hide_icon !== null) {
         modal_icon_wrapper.classList.add("d-none");
     }
 
     // Change Icon
-    if(icon !== null) {
+    if (icon !== null) {
         const icon_class = default_icon_class + icon;
         modal_icon.classList = icon_class;
     }
@@ -121,6 +123,14 @@ Array.from(document.querySelectorAll(".nice-select-search")).forEach(
 
 Array.from(document.querySelectorAll(".nice-select")).forEach((select) => {
     const s = new NiceSelect(select, { searchable: false });
+    const dropdown = s.dropdown.querySelector(".nice-select-dropdown")
+
+    // Change select input width relative to its dropdown width
+    if(dropdown) {
+        const dropdown_width = dropdown.offsetWidth;
+        s.dropdown.style.width = dropdown_width + "px";
+        s.dropdown.style.maxWidth = "100%"; // Safety
+    }
 });
 
 // Smooth corners

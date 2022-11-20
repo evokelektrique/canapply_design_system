@@ -3376,6 +3376,14 @@ Array.from(document.querySelectorAll(".nice-select")).forEach(function (select) 
   var s = new (nice_select2_dist_js_nice_select2__WEBPACK_IMPORTED_MODULE_1___default())(select, {
     searchable: false
   });
+  var dropdown = s.dropdown.querySelector(".nice-select-dropdown");
+
+  // Change select input width relative to its dropdown width
+  if (dropdown) {
+    var dropdown_width = dropdown.offsetWidth;
+    s.dropdown.style.width = dropdown_width + "px";
+    s.dropdown.style.maxWidth = "100%"; // Safety
+  }
 });
 
 // Smooth corners
