@@ -115,13 +115,12 @@ Array.from(phone_inputs).forEach((input) => {
 
 Array.from(document.querySelectorAll(".nice-select-search")).forEach(
     (select) => {
-        new NiceSelect(select, { searchable: true });
+        const s = new NiceSelect(select, { searchable: true });
     }
 );
 
 Array.from(document.querySelectorAll(".nice-select")).forEach((select) => {
     const s = new NiceSelect(select, { searchable: false });
-    console.log(s);
 });
 
 // Smooth corners

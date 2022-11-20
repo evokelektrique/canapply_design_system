@@ -114,19 +114,19 @@ $green-500: #31a37d;
 $green-600: #257a5e;
 $green-700: #18523e;
 
-$light: #fbfbfb;
-$light-100: #f1f4fe;
-$light-200: #f6f6f6;
-$light-300: #f0f0f0;
-$light-400: #e4e4e5;
-$light-500: #d9d9da;
+$light: #fbfbfb; // Wrong, needs ordering
+$light-100: #f1f4fe; // Wrong, needs ordering
+$light-200: #f8f9fa;
+$light-300: #e9ecef;
+$light-400: #dee2e6;
+$light-500: #ced4da;
 
-$dark: #36393d;
-$dark-100: #afb0b1;
-$dark-200: #86888b;
-$dark-300: #5e6164;
-$dark-400: #555555;
-$dark-500: #777777; // Wrong, needs ordering
+$dark: #343a40;
+$dark-100: #afb0b1; // Wrong, needs ordering
+$dark-200: #86888b; // Wrong, needs ordering
+$dark-300: #adb5bd;
+$dark-400: #6c757d;
+$dark-500: #495057;
 
 $grey-light: #dbdbdb;
 $grey-base: #cccccc;
