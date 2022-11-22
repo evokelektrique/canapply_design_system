@@ -137,11 +137,15 @@
                         class="btn btn-red-200 text-danger squircle smooth-corner-xs me-2"
                         data-bs-toggle="modal"
                         data-bs-target="#confirm_modal"
-                        data-modal-title="New Title"
-                        data-modal-body="New Content"
+                        data-modal-title="New Confirm Title"
+                        data-modal-body="New Confirm Content"
                         data-modal-type="confirm"
                         data-modal-icon="icon-ic_fluent_box_20_regular"
-                        data-href="https://httpbin.org/get"
+                        data-modal-method="POST"
+                        data-modal-href="https://httpbin.org/post"
+                        data-modal-payload='{"a": "b"}'
+                        data-modal-button-text="New got it !"
+                        data-modal-button-dismiss-text="test"
                     >
                         Confirm
                     </button>
@@ -159,12 +163,7 @@
         >
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h1
-                            class="modal-title fs-xl-6 text-center text-danger w-100"
-                            id="confirm_modal_title"
-                        ></h1>
-                    </div>
+                    <div class="modal-header"></div>
                     <div
                         class="modal-body p-0 justify-content-center align-items-center text-center"
                     >
@@ -180,6 +179,11 @@
                                 class="modal-icon icon-ic_fluent_calendar_agenda_20_filled fs-xl-3 d-flex"
                             ></i>
                         </div>
+
+                        <h1
+                            class="modal-title fs-xl-6 text-center text-danger w-100"
+                            id="confirm_modal_title"
+                        ></h1>
 
                         <p class="message fs-2 m-0"></p>
                     </div>
