@@ -114,7 +114,7 @@ $green-500: #31a37d;
 $green-600: #257a5e;
 $green-700: #18523e;
 
-$light: #fbfbfb; // Wrong, needs ordering
+$light: #F4F7FE; // Wrong, needs ordering *
 $light-100: #f1f4fe; // Wrong, needs ordering
 $light-200: #f8f9fa;
 $light-300: #e9ecef;
@@ -423,7 +423,7 @@ $utilities: (
         class: smooth-corner,
         values: (
             xs: 15,
-            sm: 13,
+            sm: 12,
             md: 9,
             lg: 6,
             xl: 3,

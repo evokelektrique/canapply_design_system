@@ -3314,7 +3314,9 @@ function _modal_request() {
 function toggle_modal(modal) {
   modal.classList.toggle("show");
   document.querySelector(".modal-backdrop").classList.toggle("show");
+  window.location.reload(); // Reload the page
 }
+
 window.ca.display_normal_modal = function (options) {
   var default_icon_class = "modal-icon fs-xl-3 d-flex ";
   var type = options["data-modal-type"];

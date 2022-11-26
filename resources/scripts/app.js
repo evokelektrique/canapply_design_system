@@ -31,6 +31,7 @@ async function modal_request(url, method, payload) {
 function toggle_modal(modal) {
     modal.classList.toggle("show");
     document.querySelector(".modal-backdrop").classList.toggle("show");
+    window.location.reload(); // Reload the page
 }
 
 window.ca.display_normal_modal = (options) => {

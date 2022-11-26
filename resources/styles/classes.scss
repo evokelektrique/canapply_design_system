@@ -129,20 +129,20 @@
 }
 
 // Buttons
-.btn-default {
-    &:hover {
-        background-color: $indigo-600;
-    }
+// . {
+//     &:hover {
+//         background-color: $indigo-600;
+//     }
 
-    &:active {
-        background-color: $indigo-700;
-    }
+//     &:active {
+//         background-color: $indigo-700;
+//     }
 
-    &:focus {
-        background-color: $indigo-700;
-        color: $white;
-    }
-}
+//     &:focus {
+//         background-color: $indigo-700;
+//         color: $white;
+//     }
+// }
 
 .btn {
     &[disabled] {
@@ -284,5 +284,52 @@
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
+    }
+}
+
+.ca-btn-primary {
+    background-color: $indigo !important;
+    color: $white !important;
+
+    &:hover {
+        background-color: $indigo-600 !important;
+    }
+
+    &:active {
+        background-color: $indigo-700 !important;
+        border-color: $indigo-700 !important;
+    }
+}
+
+.ca-btn-secondary {
+    background-color: $white !important;
+    color: $indigo !important;
+    border-color: $indigo !important;
+
+    &:hover {
+        background-color: $light-200 !important;
+    }
+
+    &:active {
+        background-color: $light-200 !important;
+        border-color: $indigo-600 !important;
+        color: $indigo-600 !important;
+    }
+}
+
+.ca-btn-tertiary {
+    background-color: $white !important;
+    color: $indigo !important;
+    border-color: $white !important;
+
+    &:hover {
+        background-color: $light-200 !important;
+        border-color: $light-200 !important;
+    }
+
+    &:active {
+        background-color: $light-300 !important;
+        border-color: $light-300 !important;
+        color: $indigo-600 !important;
     }
 }
