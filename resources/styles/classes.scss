@@ -92,15 +92,6 @@
         }
     }
 
-    &.ca-fa .list .option {
-        padding-left: 35px;
-
-        &:after {
-            right: auto;
-            left: 16px;
-        }
-    }
-
     &:after {
         font-family: FluentSystemIcons-Resizable !important;
         font-style: normal;
@@ -125,6 +116,25 @@
 
     &.open:after {
         transform: rotate(-180deg);
+    }
+
+    &.ca-fa {
+        padding-right: 18px;
+        padding-left: 45px;
+
+        &:after {
+            right: auto;
+            left: 4px;
+        }
+
+        .list .option {
+            padding-left: 35px;
+
+            &:after {
+                right: auto;
+                left: 16px;
+            }
+        }
     }
 }
 

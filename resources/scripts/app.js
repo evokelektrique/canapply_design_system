@@ -234,12 +234,14 @@ Array.from(document.querySelectorAll(".nice-select-search")).forEach(
     }
 );
 
-Array.from(document.querySelectorAll(".nice-select")).forEach((select) => {
-    const s = new NiceSelect(select, { searchable: false });
+Array.from(document.querySelectorAll(".nice-select, .ca-select")).forEach((element) => {
+    const s = new NiceSelect(element, { searchable: false });
     const dropdown = s.dropdown.querySelector(".nice-select-dropdown");
+    const select = s.el;
+    const is_full_width = select.classList.contains("ca-select-fullwidth");
 
     // Change select input width relative to its dropdown width
-    if (dropdown) {
+    if (is_full_width) {
         const dropdown_width = dropdown.offsetWidth;
         s.dropdown.style.width = dropdown_width + "px";
         s.dropdown.style.maxWidth = "100%"; // Safety
