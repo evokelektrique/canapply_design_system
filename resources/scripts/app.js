@@ -228,14 +228,25 @@ Array.from(phone_inputs).forEach((input) => {
     });
 });
 
-Array.from(document.querySelectorAll(".nice-select-search")).forEach(
-    (select) => {
-        const s = new NiceSelect(select, { searchable: true });
-    }
-);
+// Array.from(document.querySelectorAll(".nice-select-search")).forEach(
+//     (select) => {
+//         const s = new NiceSelect(select, { searchable: true });
+//     }
+// );
 
 Array.from(document.querySelectorAll(".nice-select, .ca-select")).forEach((element) => {
-    const s = new NiceSelect(element, { searchable: false });
+    const is_search = element.classList.contains("ca-select-search");
+    const placeholder = element.dataset.placeholder || null;
+    const search_placeholder = element.dataset.searchPlaceholder;
+    const config = {}
+
+    config["searchable"] = is_search;
+    config["placeholder"] = placeholder;
+    if(is_search) {
+        config["search_placeholder"] = search_placeholder;
+    }
+
+    const s = new NiceSelect(element, config);
     const dropdown = s.dropdown.querySelector(".nice-select-dropdown");
     const select = s.el;
     const is_full_width = select.classList.contains("ca-select-fullwidth");
