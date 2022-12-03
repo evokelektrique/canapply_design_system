@@ -71,21 +71,21 @@ window.ca.display_normal_modal = (options) => {
         );
     }
 
-    if (button_dismiss_text !== null) {
+    if (button_dismiss_text !== undefined) {
         modal_dismiss_button.innerHTML = button_dismiss_text;
     }
 
-    if (button_text !== null) {
+    if (button_text !== undefined) {
         modal_ok_button.innerHTML = button_text;
     }
 
     // Hide Icon
-    if (hide_icon !== null) {
+    if (hide_icon !== undefined) {
         modal_icon_wrapper.classList.add("d-none");
     }
 
     // Change Icon
-    if (icon !== null) {
+    if (icon !== undefined) {
         const icon_class = default_icon_class + icon;
         modal_icon.classList = icon_class;
     }
@@ -227,12 +227,6 @@ Array.from(phone_inputs).forEach((input) => {
         return e.target.value;
     });
 });
-
-// Array.from(document.querySelectorAll(".nice-select-search")).forEach(
-//     (select) => {
-//         const s = new NiceSelect(select, { searchable: true });
-//     }
-// );
 
 Array.from(document.querySelectorAll(".nice-select, .ca-select")).forEach((element) => {
     const is_search = element.classList.contains("ca-select-search");
