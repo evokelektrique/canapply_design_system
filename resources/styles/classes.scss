@@ -214,7 +214,7 @@
 }
 .iti--separate-dial-code .iti__selected-flag,
 .iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag {
-    background-color: transparent;
+    background-color: transparent !important;
     transition: border-color 0.15s ease-in-out;
 }
 
