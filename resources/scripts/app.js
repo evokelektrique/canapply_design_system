@@ -18,12 +18,12 @@ async function modal_request(url, method, payload) {
                   },
               };
     const req = await fetch(url, options);
+    const res = await req.text();
 
     if (req.status !== 200) {
-        alert("Server not responding");
+        alert("Something went wrong or server is not responding.");
+        console.log(res);
     }
-
-    const res = await req.text();
 
     return res;
 }
@@ -41,6 +41,8 @@ window.ca.display_normal_modal = (options) => {
     const body = options["data-modal-body"];
     const icon = options["data-modal-icon"];
     const hide_icon = options["data-modal-hidden-icon"];
+    const hide_close = options["data-modal-hidden-close"];
+    const hide_footer = options["data-modal-hidden-footer"];
     const button_text = options["data-modal-button-text"];
     const button_dismiss_text = options["data-modal-button-dismiss-text"];
     const href = options["data-modal-href"];
@@ -52,11 +54,13 @@ window.ca.display_normal_modal = (options) => {
     const modal_body = modal.querySelector(".modal-body .message");
     const modal_icon_wrapper = modal.querySelector(".modal-icon-wrapper");
     const modal_icon = modal.querySelector(".modal-icon");
+    const modal_close_icon = modal.querySelector(".modal-close-icon");
     const modal_ok_button = modal.querySelector(".button-ok");
     const modal_dismiss_button = modal.querySelector(".button-dismiss");
+    const modal_footer = modal.querySelector(".modal-footer");
 
     // Create an instance from modal, and display it
-    const modal_instance = new bootstrap.Modal(modal, {})
+    const modal_instance = new bootstrap.Modal(modal, {});
     modal_instance.show();
 
     if (type === "confirm") {
@@ -84,6 +88,17 @@ window.ca.display_normal_modal = (options) => {
         modal_icon_wrapper.classList.add("d-none");
     }
 
+    // Hide Close Icons button
+    if (hide_close !== undefined) {
+        modal_close_icon.classList.add("d-none");
+    }
+
+    // Hide Footer
+    if (hide_footer !== undefined) {
+        modal_footer.classList.add("d-none");
+        modal_body.classList.add("pb-2", "mb-1", "px-2", "mx-1");
+    }
+
     // Change Icon
     if (icon !== undefined) {
         const icon_class = default_icon_class + icon;
@@ -95,11 +110,11 @@ window.ca.display_normal_modal = (options) => {
 
     // Change Body
     modal_body.innerHTML = body;
-}
+};
 
 function normal_modal(event, modal) {
     // Prevent errors while displaying modals via JavaScript
-    if(event.relatedTarget === undefined) {
+    if (event.relatedTarget === undefined) {
         return;
     }
 
@@ -111,6 +126,8 @@ function normal_modal(event, modal) {
     const body = button.getAttribute("data-modal-body");
     const icon = button.getAttribute("data-modal-icon");
     const hide_icon = button.getAttribute("data-modal-hidden-icon");
+    const hide_close = button.getAttribute("data-modal-hidden-close");
+    const hide_footer = button.getAttribute("data-modal-hidden-footer");
     const button_text = button.getAttribute("data-modal-button-text");
     const button_dismiss_text = button.getAttribute(
         "data-modal-button-dismiss-text"
@@ -121,9 +138,11 @@ function normal_modal(event, modal) {
     const modal_title = modal.querySelector(".modal-title");
     const modal_body = modal.querySelector(".modal-body .message");
     const modal_icon_wrapper = modal.querySelector(".modal-icon-wrapper");
+    const modal_close_icon = modal.querySelector(".modal-close-icon");
     const modal_icon = modal.querySelector(".modal-icon");
     const modal_ok_button = modal.querySelector(".button-ok");
     const modal_dismiss_button = modal.querySelector(".button-dismiss");
+    const modal_footer = modal.querySelector(".modal-footer");
 
     if (type === "confirm") {
         modal_ok_button.addEventListener(
@@ -137,21 +156,32 @@ function normal_modal(event, modal) {
         );
     }
 
-    if (button_dismiss_text !== null) {
+    if (button_dismiss_text !== undefined) {
         modal_dismiss_button.innerHTML = button_dismiss_text;
     }
 
-    if (button_text !== null) {
+    if (button_text !== undefined) {
         modal_ok_button.innerHTML = button_text;
     }
 
     // Hide Icon
-    if (hide_icon !== null) {
+    if (hide_icon !== undefined) {
         modal_icon_wrapper.classList.add("d-none");
     }
 
+    // Hide Close Icons button
+    if (hide_close !== undefined) {
+        modal_close_icon.classList.add("d-none");
+    }
+
+    // Hide Footer
+    if (hide_footer !== undefined) {
+        modal_footer.classList.add("d-none");
+        modal_body.classList.add("pb-2", "mb-1", "px-2", "mx-1");
+    }
+
     // Change Icon
-    if (icon !== null) {
+    if (icon !== undefined) {
         const icon_class = default_icon_class + icon;
         modal_icon.classList = icon_class;
     }
@@ -228,30 +258,32 @@ Array.from(phone_inputs).forEach((input) => {
     });
 });
 
-Array.from(document.querySelectorAll(".nice-select, .ca-select")).forEach((element) => {
-    const is_search = element.classList.contains("ca-select-search");
-    const placeholder = element.dataset.placeholder || null;
-    const search_placeholder = element.dataset.searchPlaceholder;
-    const config = {}
+Array.from(document.querySelectorAll(".nice-select, .ca-select")).forEach(
+    (element) => {
+        const is_search = element.classList.contains("ca-select-search");
+        const placeholder = element.dataset.placeholder || undefined;
+        const search_placeholder = element.dataset.searchPlaceholder;
+        const config = {};
 
-    config["searchable"] = is_search;
-    config["placeholder"] = placeholder;
-    if(is_search) {
-        config["search_placeholder"] = search_placeholder;
+        config["searchable"] = is_search;
+        config["placeholder"] = placeholder;
+        if (is_search) {
+            config["search_placeholder"] = search_placeholder;
+        }
+
+        const s = new NiceSelect(element, config);
+        const dropdown = s.dropdown.querySelector(".nice-select-dropdown");
+        const select = s.el;
+        const is_full_width = select.classList.contains("ca-select-fullwidth");
+
+        // Change select input width relative to its dropdown width
+        if (is_full_width) {
+            const dropdown_width = dropdown.offsetWidth;
+            s.dropdown.style.width = dropdown_width + "px";
+            s.dropdown.style.maxWidth = "100%"; // Safety
+        }
     }
-
-    const s = new NiceSelect(element, config);
-    const dropdown = s.dropdown.querySelector(".nice-select-dropdown");
-    const select = s.el;
-    const is_full_width = select.classList.contains("ca-select-fullwidth");
-
-    // Change select input width relative to its dropdown width
-    if (is_full_width) {
-        const dropdown_width = dropdown.offsetWidth;
-        s.dropdown.style.width = dropdown_width + "px";
-        s.dropdown.style.maxWidth = "100%"; // Safety
-    }
-});
+);
 
 // Smooth corners
 CSS.paintWorklet.addModule(

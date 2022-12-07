@@ -85,6 +85,8 @@
                         data-modal-title="New Title"
                         data-modal-body="New Content"
                         data-modal-type="success"
+                        data-modal-hidden-footer=""
+                        data-modal-hidden-close=""
                     >
                         Success
                     </button>
@@ -163,7 +165,15 @@
         >
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header"></div>
+                    <div class="modal-header position-relative">
+                        <i
+                            class="modal-close-icon icon-ic_fluent_dismiss_20_regular position-absolute fs-1 d-flex px-2"
+                            aria-label="Close"
+                            data-bs-dismiss="modal"
+                            style="top: 40px; right: 40px"
+                            role="button"
+                        ></i>
+                    </div>
                     <div
                         class="modal-body p-0 justify-content-center align-items-center text-center"
                     >
@@ -219,11 +229,18 @@
         >
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header position-relative">
                         <h1
                             class="modal-title fs-xl-6 text-center text-danger w-100"
                             id="error_modal_title"
                         ></h1>
+                        <i
+                            class="modal-close-icon icon-ic_fluent_dismiss_20_regular position-absolute fs-1 d-flex px-2"
+                            aria-label="Close"
+                            data-bs-dismiss="modal"
+                            style="top: 40px; right: 40px"
+                            role="button"
+                        ></i>
                     </div>
                     <div
                         class="modal-body p-0 justify-content-center align-items-center text-center"
@@ -269,11 +286,19 @@
         >
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header position-relative">
                         <h1
                             class="modal-title fs-xl-6 text-center text-warning w-100"
                             id="warning_modal_title"
                         ></h1>
+
+                        <i
+                            class="modal-close-icon icon-ic_fluent_dismiss_20_regular position-absolute fs-1 d-flex px-2"
+                            aria-label="Close"
+                            data-bs-dismiss="modal"
+                            style="top: 40px; right: 40px"
+                            role="button"
+                        ></i>
                     </div>
                     <div
                         class="modal-body p-0 justify-content-center align-items-center text-center"
@@ -319,11 +344,19 @@
         >
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header position-relative">
                         <h1
                             class="modal-title fs-xl-6 text-center text-primary w-100"
                             id="info_modal_title"
                         ></h1>
+
+                        <i
+                            class="modal-close-icon icon-ic_fluent_dismiss_20_regular position-absolute fs-1 d-flex px-2"
+                            aria-label="Close"
+                            data-bs-dismiss="modal"
+                            style="top: 40px; right: 40px"
+                            role="button"
+                        ></i>
                     </div>
                     <div
                         class="modal-body p-0 justify-content-center align-items-center text-center"
@@ -369,11 +402,19 @@
         >
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header position-relative">
                         <h1
                             class="modal-title fs-xl-6 text-center text-success w-100"
                             id="success_modal_title"
                         ></h1>
+
+                        <i
+                            class="modal-close-icon icon-ic_fluent_dismiss_20_regular position-absolute fs-1 d-flex px-2"
+                            aria-label="Close"
+                            data-bs-dismiss="modal"
+                            style="top: 40px; right: 40px"
+                            role="button"
+                        ></i>
                     </div>
                     <div
                         class="modal-body p-0 justify-content-center align-items-center text-center"
@@ -418,4 +459,11 @@
     </body>
 
     <script src="../dist/js/app.js"></script>
+    <script>
+        window.ca.display_normal_modal({
+            "data-modal-type": "error",
+            "data-modal-title": "New Title",
+            "data-modal-button-text": "YES",
+        });
+    </script>
 </html>
