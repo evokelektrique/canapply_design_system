@@ -36,6 +36,7 @@ function toggle_modal(modal) {
 
 window.ca.display_normal_modal = (options) => {
     const default_icon_class = "modal-icon fs-xl-3 d-flex ";
+    const size = options["data-modal-size"];
     const type = options["data-modal-type"];
     const title = options["data-modal-title"];
     const body = options["data-modal-body"];
@@ -58,6 +59,7 @@ window.ca.display_normal_modal = (options) => {
     const modal_ok_button = modal.querySelector(".button-ok");
     const modal_dismiss_button = modal.querySelector(".button-dismiss");
     const modal_footer = modal.querySelector(".modal-footer");
+    const modal_dialog = modal.querySelector(".modal-dialog");
 
     // Create an instance from modal, and display it
     const modal_instance = new bootstrap.Modal(modal, {});
@@ -73,6 +75,10 @@ window.ca.display_normal_modal = (options) => {
             },
             { once: true }
         );
+    }
+
+    if(size !== undefined) {
+        modal_dialog.classList.add("modal-" + size);
     }
 
     if (button_dismiss_text !== undefined) {
@@ -121,6 +127,7 @@ function normal_modal(event, modal) {
     const default_icon_class = "modal-icon fs-xl-3 d-flex ";
     const button = event.relatedTarget;
 
+    const size = button.getAttribute("data-modal-size");
     const type = button.getAttribute("data-modal-type");
     const title = button.getAttribute("data-modal-title");
     const body = button.getAttribute("data-modal-body");
@@ -143,6 +150,7 @@ function normal_modal(event, modal) {
     const modal_ok_button = modal.querySelector(".button-ok");
     const modal_dismiss_button = modal.querySelector(".button-dismiss");
     const modal_footer = modal.querySelector(".modal-footer");
+    const modal_dialog = modal.querySelector(".modal-dialog");
 
     if (type === "confirm") {
         modal_ok_button.addEventListener(
@@ -154,6 +162,10 @@ function normal_modal(event, modal) {
             },
             { once: true }
         );
+    }
+
+    if(size !== undefined) {
+        modal_dialog.classList.add("modal-" + size);
     }
 
     if (button_dismiss_text !== undefined) {
