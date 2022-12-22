@@ -103,6 +103,9 @@ window.ca.display_normal_modal = (options) => {
     if (hide_footer !== undefined) {
         modal_footer.classList.add("d-none");
         modal_body.classList.add("pb-2", "mb-1", "px-2", "mx-1");
+    } else {
+        modal_footer.classList.remove("d-none");
+        modal_body.classList.remove("pb-2", "mb-1", "px-2", "mx-1");
     }
 
     // Change Icon
@@ -164,36 +167,39 @@ function normal_modal(event, modal) {
         );
     }
 
-    if(size !== undefined) {
+    if(size !== null) {
         modal_dialog.classList.add("modal-" + size);
     }
 
-    if (button_dismiss_text !== undefined) {
+    if (button_dismiss_text !== null) {
         modal_dismiss_button.innerHTML = button_dismiss_text;
     }
 
-    if (button_text !== undefined) {
+    if (button_text !== null) {
         modal_ok_button.innerHTML = button_text;
     }
 
     // Hide Icon
-    if (hide_icon !== undefined) {
+    if (hide_icon !== null) {
         modal_icon_wrapper.classList.add("d-none");
     }
 
     // Hide Close Icons button
-    if (hide_close !== undefined) {
+    if (hide_close !== null) {
         modal_close_icon.classList.add("d-none");
     }
 
     // Hide Footer
-    if (hide_footer !== undefined) {
+    if (hide_footer !== null) {
         modal_footer.classList.add("d-none");
         modal_body.classList.add("pb-2", "mb-1", "px-2", "mx-1");
+    } else {
+        modal_footer.classList.remove("d-none");
+        modal_body.classList.remove("pb-2", "mb-1", "px-2", "mx-1");
     }
 
     // Change Icon
-    if (icon !== undefined) {
+    if (icon !== null) {
         const icon_class = default_icon_class + icon;
         modal_icon.classList = icon_class;
     }
