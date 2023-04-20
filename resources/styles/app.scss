@@ -1,7 +1,7 @@
 //
 // Grid
 //
-$grid-gutter-width: 1.25rem;
+$grid-gutter-width: 1.5rem;
 
 // Bootstrap Sass
 @import "~bootstrap/scss/_functions";
@@ -9,18 +9,23 @@ $grid-gutter-width: 1.25rem;
 
 // Customs
 @import "variables";
+@import 'fa';
 @import 'classes';
 
 // Fonts & Icons
 @import "../fonts/sf_pro/stylesheet.css"; // FONT - SF PRO Display
 @import "../fonts/dana/stylesheet.css"; // FONT - Dana Fa Nums
+
 // ICON
 @import "../fonts/fluent/FluentSystemIcons-Resizable.css";
 
 // Boostrap Core
 @import "~bootstrap/scss/bootstrap";
+
+// Select box
 @import "~nice-select2/dist/css/nice-select2.css";
 
+// Phone inputs
 $flagsImagePath: "../../../../dist/images/";
 @import "~intl-tel-input/src/css/intlTelInput.scss";
 

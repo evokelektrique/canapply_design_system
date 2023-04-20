@@ -1,0 +1,38 @@
+.ca-fa {
+    font-family: Dana !important;
+
+    &.rtl *,
+    &.rtl {
+        direction: rtl;
+        text-align: right;
+    }
+
+    // Line heights
+    .lh-xs {
+        line-height: 1.4em !important;
+    }
+
+    .lh-s {
+        line-height: 1.7em !important;
+    }
+
+    .lh-m {
+        line-height: 1.85em !important;
+    }
+
+    .lh-l {
+        line-height: 1.9em !important;
+    }
+
+    // Buttons
+    .ca-btn-primary {
+        padding: 10px 32px;
+    }
+
+    .ca-btn-secondary {
+
+    }
+
+    .ca-btn-tertiary {
+    }
+}
