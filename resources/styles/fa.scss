@@ -7,7 +7,20 @@
         text-align: right;
     }
 
-    // Line heights
+    // Buttons
+    .ca-btn-primary {
+        padding: 10px 32px;
+    }
+
+    .ca-btn-secondary {
+    }
+
+    .ca-btn-tertiary {
+    }
+
+    /**
+    * Line heights
+    */
     .lh-xs {
         line-height: 1.4em !important;
     }
@@ -24,15 +37,53 @@
         line-height: 1.9em !important;
     }
 
-    // Buttons
-    .ca-btn-primary {
-        padding: 10px 32px;
-    }
+    .fs {
+        &-xl-1 {
+            line-height: 1.4em;
+        }
 
-    .ca-btn-secondary {
+        &-xl-2 {
+            line-height: 1.4em;
+        }
 
-    }
+        &-xl-3 {
+            line-height: 1.4em;
+        }
 
-    .ca-btn-tertiary {
+        &-xl-4 {
+            line-height: 1.4em;
+        }
+
+        &-xl-5 {
+            line-height: 1.7em;
+        }
+
+        &-xl-6 {
+            line-height: 1.7em;
+        }
+
+        &-1 {
+            line-height: 1.7em;
+        }
+
+        &-2 {
+            line-height: 1.7em;
+        }
+
+        &-3 {
+            line-height: 1.8em;
+        }
+
+        &-4 {
+            line-height: 1.85em;
+        }
+
+        &-5 {
+            line-height: 1.9em;
+        }
+
+        &-1 {
+            line-height: 1.9em;
+        }
     }
 }

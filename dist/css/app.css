@@ -12726,10 +12726,16 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 @charset "UTF-8";
 .ca-fa {
   font-family: Dana !important;
+  /**
+  * Line heights
+  */
 }
 .ca-fa.rtl *, .ca-fa.rtl {
   direction: rtl;
   text-align: right;
+}
+.ca-fa .ca-btn-primary {
+  padding: 10px 32px;
 }
 .ca-fa .lh-xs {
   line-height: 1.4em !important;
@@ -12743,9 +12749,43 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
 .ca-fa .lh-l {
   line-height: 1.9em !important;
 }
-.ca-fa .ca-btn-primary {
-  padding: 10px 32px;
+.ca-fa .fs-xl-1 {
+  line-height: 1.4em;
 }
+.ca-fa .fs-xl-2 {
+  line-height: 1.4em;
+}
+.ca-fa .fs-xl-3 {
+  line-height: 1.4em;
+}
+.ca-fa .fs-xl-4 {
+  line-height: 1.4em;
+}
+.ca-fa .fs-xl-5 {
+  line-height: 1.7em;
+}
+.ca-fa .fs-xl-6 {
+  line-height: 1.7em;
+}
+.ca-fa .fs-1 {
+  line-height: 1.7em;
+}
+.ca-fa .fs-2 {
+  line-height: 1.7em;
+}
+.ca-fa .fs-3 {
+  line-height: 1.8em;
+}
+.ca-fa .fs-4 {
+  line-height: 1.85em;
+}
+.ca-fa .fs-5 {
+  line-height: 1.9em;
+}
+.ca-fa .fs-1 {
+  line-height: 1.9em;
+}
+
 .ca-link {
   text-underline-offset: 6px;
 }
