@@ -166,6 +166,10 @@
         background-image: url("../images/flags@2x.png");
     }
 }
+.iti--separate-dial-code .form-control {
+    height: $iti-input-height;
+}
+
 .iti--separate-dial-code .iti__selected-flag,
 .iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag {
     background-color: transparent !important;
