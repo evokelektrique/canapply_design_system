@@ -173,7 +173,7 @@
 }
 
 .iti--separate-dial-code .iti__selected-flag {
-    border-right: 1px solid $light-200;
+    border-right: 1px solid $input-border-color;
 }
 
 .iti__country-list {
@@ -187,7 +187,7 @@
 }
 
 .iti__flag-container .iti__selected-flag:focus {
-    border-color: $light-200 !important;
+    border-color: $input-border-color !important;
 }
 
 .iti:has(.is-valid) .iti__flag-container .iti__selected-flag {
