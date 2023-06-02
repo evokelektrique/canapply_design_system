@@ -267,6 +267,18 @@
         background-color: $indigo-700 !important;
         border-color: $indigo-700 !important;
     }
+
+    &.ca-btn-sm {
+        @include ca-btn-size(32px, 0);
+    }
+
+    &.ca-btn-md {
+        @include ca-btn-size(44px, 0);
+    }
+
+    &.ca-btn-lg {
+        @include ca-btn-size(51px, 0);
+    }
 }
 
 .ca-btn-secondary {
@@ -282,6 +294,18 @@
         background-color: $light-200 !important;
         border-color: $indigo-600 !important;
         color: $indigo-600 !important;
+    }
+
+    &.ca-btn-sm {
+        @include ca-btn-size(32px, 0);
+    }
+
+    &.ca-btn-md {
+        @include ca-btn-size(44px, 0);
+    }
+
+    &.ca-btn-lg {
+        @include ca-btn-size(51px, 0);
     }
 }
 
@@ -299,5 +323,17 @@
         background-color: $light-300 !important;
         border-color: $light-300 !important;
         color: $indigo-600 !important;
+    }
+
+    &.ca-btn-sm {
+        @include ca-btn-size(32px, 0);
+    }
+
+    &.ca-btn-md {
+        @include ca-btn-size(44px, 0);
+    }
+
+    &.ca-btn-lg {
+        @include ca-btn-size(51px, 0);
     }
 }

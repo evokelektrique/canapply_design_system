@@ -1,0 +1,5 @@
+// Small button properties
+@mixin ca-btn-size($height: 0px, $line-height: 0) {
+    height: $height;
+    line-height: $line-height;
+}
