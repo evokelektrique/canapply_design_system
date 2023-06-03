@@ -269,15 +269,15 @@
     }
 
     &.ca-btn-sm {
-        @include ca-btn-size(32px, 0);
+        @include ca-btn-size(32px, 0.5em);
     }
 
     &.ca-btn-md {
-        @include ca-btn-size(44px, 0);
+        @include ca-btn-size(44px, 1.4em);
     }
 
     &.ca-btn-lg {
-        @include ca-btn-size(51px, 0);
+        @include ca-btn-size(51px, 1.7em);
     }
 }
 
@@ -297,15 +297,15 @@
     }
 
     &.ca-btn-sm {
-        @include ca-btn-size(32px, 0);
+        @include ca-btn-size(32px, 0.5em);
     }
 
     &.ca-btn-md {
-        @include ca-btn-size(44px, 0);
+        @include ca-btn-size(44px, 1.4em);
     }
 
     &.ca-btn-lg {
-        @include ca-btn-size(51px, 0);
+        @include ca-btn-size(51px, 1.7em);
     }
 }
 
@@ -326,14 +326,14 @@
     }
 
     &.ca-btn-sm {
-        @include ca-btn-size(32px, 0);
+        @include ca-btn-size(32px, 0.5em);
     }
 
     &.ca-btn-md {
-        @include ca-btn-size(44px, 0);
+        @include ca-btn-size(44px, 1.4em);
     }
 
     &.ca-btn-lg {
-        @include ca-btn-size(51px, 0);
+        @include ca-btn-size(51px, 1.7em);
     }
 }
