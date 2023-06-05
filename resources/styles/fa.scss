@@ -88,4 +88,15 @@
             line-height: 1.9em;
         }
     }
+
+    // RTL checkboxes
+    .pretty {
+        margin-right: 0;
+    }
+    .pretty .state label:after,
+    .pretty .state label:before,
+    .pretty.p-icon .state .icon {
+        left: auto;
+        right: 0;
+    }
 }
