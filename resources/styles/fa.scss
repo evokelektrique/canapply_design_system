@@ -93,10 +93,16 @@
     .pretty {
         margin-right: 0;
     }
+
     .pretty .state label:after,
     .pretty .state label:before,
     .pretty.p-icon .state .icon {
         left: auto;
         right: 0;
     }
+
+    .pretty .state label {
+        text-indent: 0;
+        padding-right: 1.25rem;
+     }
 }
