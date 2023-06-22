@@ -10,8 +10,8 @@ $grid-gutter-width: 1.5rem;
 // Customs
 @import "variables";
 @import "mixins";
-@import 'fa';
-@import 'classes';
+@import "fa";
+@import "classes";
 
 // Fonts & Icons
 @import "../fonts/sf_pro/stylesheet.css"; // FONT - SF PRO Display
@@ -27,17 +27,21 @@ $grid-gutter-width: 1.5rem;
 @import "~nice-select2/dist/css/nice-select2.css";
 
 // Phone inputs
-@import "~intl-tel-input/build/css/intlTelInput.css";
-.iti__flag {background-image: url("../images/flags2.png") !important;}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .iti__flag {background-image: url("../images/flags@2x.png") !important;}
+.iti__flag {
+    background-image: url("../images/flags2.png") !important;
 }
 
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .iti__flag {
+        background-image: url("../images/flags@2x.png") !important;
+    }
+}
+@import "~intl-tel-input/build/css/intlTelInput.css";
+
 // Pretty Checkbox
-@import '~pretty-checkbox/src/scss/variables';
-@import '~pretty-checkbox/src/scss/core';
-@import 'switches/general';
-@import 'switches/fill';
-@import 'switches/icon_checkbox';
-@import 'switches/round';
+@import "~pretty-checkbox/src/scss/variables";
+@import "~pretty-checkbox/src/scss/core";
+@import "switches/general";
+@import "switches/fill";
+@import "switches/icon_checkbox";
+@import "switches/round";
