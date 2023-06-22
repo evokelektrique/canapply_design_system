@@ -27,8 +27,12 @@ $grid-gutter-width: 1.5rem;
 @import "~nice-select2/dist/css/nice-select2.css";
 
 // Phone inputs
-$flagsImagePath: "/../../dist/images/";
-@import "~intl-tel-input/src/css/intlTelInput.scss";
+@import "~intl-tel-input/build/css/intlTelInput.css";
+.iti__flag {background-image: url("../images/flags2.png") !important;}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {background-image: url("../images/flags@2x.png") !important;}
+}
 
 // Pretty Checkbox
 @import '~pretty-checkbox/src/scss/variables';
