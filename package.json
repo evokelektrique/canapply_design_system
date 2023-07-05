@@ -1,6 +1,6 @@
 {
   "name": "@evokelektrique/canapply-ds",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CanApply Design System",
   "source": "resources/scripts/app.js",
   "main": "./dist/js/canapply-ds.js",
@@ -30,7 +30,7 @@
     "bootstrap": "^5.2.2",
     "intl-tel-input": "^17.0.19",
     "laravel-mix": "^6.0.49",
-    "nice-select2": "^2.0.0",
+    "nice-select2": "^2.1.0",
     "office-ui-fabric-core": "^11.0.1",
     "pretty-checkbox": "^3.0.3",
     "smooth-corners": "^1.0.8",

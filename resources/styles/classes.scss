@@ -10,6 +10,9 @@
 }
 
 // Select
+select {
+    display: none;
+}
 .ca-select {
     padding-right: 45px;
     font-size: $h2-font-size;
@@ -18,6 +21,12 @@
     border-radius: $border-radius;
     padding-top: 6.5px;
     height: 51px;
+
+    .option,
+    .current {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
     // Full width option for "ca-select-fullwidth" class
     &-fullwidth .nice-select-dropdown {
@@ -41,13 +50,14 @@
         font-size: $h3-font-size;
 
         &:hover,
+        &.selected,
         &.selected.focus {
             background-color: $light-100;
             color: $primary-base;
             font-weight: normal;
         }
 
-        &.selected.focus {
+        &.selected {
             position: relative;
 
             &:after {

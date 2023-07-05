@@ -5,6 +5,7 @@ import intlTelInput from "intl-tel-input";
 window.intlTelInput = intlTelInput;
 window.bootstrap = bootstrap;
 window.ca = {}; // Global CanApply functions
+window.NiceSelect = NiceSelect;
 
 async function modal_request(url, method, payload) {
     const options =
@@ -282,7 +283,9 @@ Array.from(phone_inputs).forEach((input) => {
 Array.from(document.querySelectorAll(".nice-select, .ca-select")).forEach(
     (element) => {
         const is_search = element.classList.contains("ca-select-search");
+        const is_multiple = element.classList.contains("ca-select-multiple");
         const placeholder = element.dataset.placeholder || undefined;
+        const selected_text_placeholder = element.dataset.selectedTextPlaceholder || undefined;
         const dropdown_max_height = element.dataset.dropdownMaxHeight || undefined;
         const search_placeholder = element.dataset.searchPlaceholder;
         const config = {};
@@ -293,11 +296,20 @@ Array.from(document.querySelectorAll(".nice-select, .ca-select")).forEach(
             config["search_placeholder"] = search_placeholder;
         }
 
+        if(is_multiple) {
+            config["selectedtext"] = selected_text_placeholder;
+        }
+
         const s = new NiceSelect(element, config);
+        window.ca.selectBoxes ||= {};
+
+        if(element.id) {
+            window.ca.selectBoxes[element.id] = s;
+        }
+
         const dropdown = s.dropdown.querySelector(".nice-select-dropdown");
         const select = s.el;
-        const current = s.dropdown.querySelector(".current");
-        current.classList.add("d-block", "w-100");
+        // select.classList.add('d-none')
         const is_full_width = select.classList.contains("ca-select-fullwidth");
 
         if(dropdown_max_height) {
