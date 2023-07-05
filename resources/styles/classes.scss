@@ -107,6 +107,12 @@ select {
         transform: rotate(-180deg);
     }
 
+    &.open,
+    &:active,
+    &:focus {
+        border-color: $primary-base
+    }
+
     &.ca-fa {
         padding-right: 18px;
         padding-left: 45px;
