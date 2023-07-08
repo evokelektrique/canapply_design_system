@@ -17,6 +17,11 @@ npm run dev
 npm run build
 ```
 
+### Publish
+```
+npm publish
+```
+
 ### Credits
 
 @CanApplyTeam
