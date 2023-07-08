@@ -13,6 +13,7 @@
 select {
     display: none;
 }
+
 .ca-select {
     padding-right: 45px;
     font-size: $h2-font-size;
@@ -110,7 +111,7 @@ select {
     &.open,
     &:active,
     &:focus {
-        border-color: $primary-base
+        border-color: $primary-base;
     }
 
     &.ca-fa {
@@ -129,6 +130,54 @@ select {
                 right: auto;
                 left: 16px;
             }
+        }
+    }
+
+    // Multple select input
+    &.ca-select-multiple.ca-fa {
+        .option {
+            padding-right: 40px;
+        }
+
+        .option:after {
+            right: 0 !important;
+            left: auto !important;
+        }
+    }
+
+    &.ca-select-multiple {
+        .option {
+            position: relative;
+            padding-left: 40px;
+
+            &:hover:after {
+                color: var(--bs-primary);
+            }
+        }
+        .option:after {
+            left: 25px !important;
+            right: auto !important;
+
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-family: FluentSystemIcons-Resizable !important;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400 !important;
+            line-height: 1;
+            text-transform: none;
+
+            color: var(--bs-dark-400);
+            content: "\e35a";
+            font-size: 24px;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .option.selected:after {
+            content: "\e366";
+            color: var(--bs-primary);
         }
     }
 }
