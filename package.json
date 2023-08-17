@@ -1,6 +1,6 @@
 {
   "name": "@evokelektrique/canapply-ds",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "CanApply Design System",
   "source": "resources/scripts/app.js",
   "main": "./dist/js/canapply-ds.js",
