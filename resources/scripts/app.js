@@ -363,7 +363,7 @@ window.ca.wizard.form_wizard_change_step_styles = function (
             icon: {
                 fa: {
                     classes:
-                        "icon-ic_fluent_checkmark_circle_20_regular fs-xl-5 me-2 d-flex text-indigo-500",
+                        "icon-ic_fluent_checkmark_circle_20_regular fs-xl-5 ms-2 d-flex text-indigo-500",
                 },
                 en: {
                     classes:
@@ -397,7 +397,7 @@ window.ca.wizard.form_wizard_change_step_styles = function (
             icon: {
                 fa: {
                     classes:
-                        "bg-light-200 text-dark me-2 rounded-pill text-center d-flex align-items-center justify-content-center",
+                        "bg-light-200 text-dark ms-2 rounded-pill text-center d-flex align-items-center justify-content-center",
                 },
                 en: {
                     classes:
