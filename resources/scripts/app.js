@@ -5,6 +5,7 @@ import intlTelInput from "intl-tel-input";
 window.intlTelInput = intlTelInput;
 window.bootstrap = bootstrap;
 window.ca = {}; // Global CanApply functions
+window.ca.wizard = {};
 window.NiceSelect = NiceSelect;
 
 async function modal_request(url, method, payload) {
@@ -351,10 +352,179 @@ let paymentEmail = document.getElementById("payment-email");
 let paymentPhone = document.getElementById("payment-phone-number");
 
 // Wizard Form
+
+window.ca.wizard.form_wizard_change_step_styles = function (
+    form,
+    steps,
+    current_step
+) {
+    const styles = {
+        checked: {
+            icon: {
+                fa: {
+                    classes:
+                        "icon-ic_fluent_checkmark_circle_20_regular fs-xl-5 me-2 d-flex text-indigo-500",
+                },
+                en: {
+                    classes:
+                        "icon-ic_fluent_checkmark_circle_20_regular fs-xl-5 me-2 d-flex text-indigo-500",
+                },
+            },
+            text: {
+                classes: "fw-normal",
+            },
+            step_number: {},
+        },
+        activated: {
+            icon: {
+                fa: {
+                    classes:
+                        "bg-indigo-500 text-white ms-2 rounded-pill text-center d-flex align-items-center justify-content-center",
+                },
+                en: {
+                    classes:
+                        "bg-indigo-500 text-white me-2 rounded-pill text-center d-flex align-items-center justify-content-center",
+                },
+            },
+            text: {
+                classes: "fw-bold",
+            },
+            step_number: {
+                styles: "width: 28px; height: 28px;",
+            },
+        },
+        default: {
+            icon: {
+                fa: {
+                    classes:
+                        "bg-light-200 text-dark me-2 rounded-pill text-center d-flex align-items-center justify-content-center",
+                },
+                en: {
+                    classes:
+                        "bg-light-200 text-dark me-2 rounded-pill text-center d-flex align-items-center justify-content-center",
+                },
+            },
+            text: {
+                classes: "fw-normal",
+            },
+            step_number: {
+                styles: "width: 28px; height: 28px;",
+            },
+        },
+        global: {
+            next_chevron: {
+                fa: {
+                    classes:
+                        "icon-ic_fluent_chevron_left_20_filled fs-1 mx-3 d-flex",
+                },
+                en: {
+                    classes:
+                        "icon-ic_fluent_chevron_right_20_filled fs-1 mx-3 d-flex",
+                },
+            },
+        },
+    };
+
+    const current_step_element = steps[current_step];
+    const next_steps = [...steps].slice(current_step + 1);
+    const previous_steps = [...steps].slice(0, current_step);
+    const pages = form.querySelectorAll(".ca-wizard-form-page");
+    const footers = form.querySelectorAll(".ca-wizard-form-footer");
+    const current_page_element = pages[current_step];
+    const current_footer_element = footers[current_step];
+    const is_last_step = current_step === steps.length - 1 && true; // Short circuit statement
+    const is_first_step = current_step === 0 && true; // Short circuit statement
+
+    // Pages visibility
+    Array.from(pages).forEach((page) => {
+        page.classList.add("d-none");
+        current_page_element.classList.remove("d-none");
+    });
+
+    // Footer visibility
+    Array.from(footers).forEach((footer) => {
+        footer.classList.add("d-none");
+        current_footer_element.classList.remove("d-none");
+    });
+
+    // Remove steps and regenerate them again
+    Array.from(steps).forEach((step) => {
+        step.innerHTML = "";
+    });
+
+    // Chevron
+    const _next_chevron = document.createElement("i");
+    if (form.classList.contains("ca-fa")) {
+        _next_chevron.classList = styles.global.next_chevron.fa.classes;
+    } else {
+        _next_chevron.classList = styles.global.next_chevron.en.classes;
+    }
+
+    // Current step
+    const { _active_step_span, _active_step_text } =
+        wizard_form_generate_active_step(form, current_step_element, styles);
+    current_step_element.appendChild(_active_step_span);
+    current_step_element.appendChild(_active_step_text);
+
+    if (!is_last_step) {
+        current_step_element.appendChild(_next_chevron);
+    }
+
+    // Next steps
+    Array.from(next_steps).forEach((step) => {
+        const { _default_step_span, _default_step_text } =
+            wizard_form_generate_default_step(form, step, styles);
+        const _next_chevron = document.createElement("i");
+        if (form.classList.contains("ca-fa")) {
+            _next_chevron.classList = styles.global.next_chevron.fa.classes;
+        } else {
+            _next_chevron.classList = styles.global.next_chevron.en.classes;
+        }
+        step.appendChild(_default_step_span);
+        step.appendChild(_default_step_text);
+        step.appendChild(_next_chevron);
+    });
+
+    // Previous steps
+    Array.from(previous_steps).forEach((step) => {
+        const { _checked_step_icon, _checked_step_text } =
+            wizard_form_generate_checked_step(form, step, styles);
+        const _next_chevron = document.createElement("i");
+        if (form.classList.contains("ca-fa")) {
+            _next_chevron.classList = styles.global.next_chevron.fa.classes;
+        } else {
+            _next_chevron.classList = styles.global.next_chevron.en.classes;
+        }
+
+        step.appendChild(_checked_step_icon);
+        step.appendChild(_checked_step_text);
+        step.appendChild(_next_chevron);
+    });
+
+    // Create a custom event for next steps
+    const step_change_event = new CustomEvent("CaWizardStepChange", {
+        detail: {
+            steps,
+            current_step,
+            current_footer_element,
+            current_step_element,
+            current_page_element,
+            footers,
+            form,
+            next_steps,
+            previous_steps,
+            is_last_step,
+            is_first_step,
+        },
+    });
+
+    // Dispatch an event for steps
+    window.dispatchEvent(step_change_event);
+};
 const wizard_forms = document.querySelectorAll(".ca-wizard-form");
 Array.from(wizard_forms).forEach((form) => {
     // Step
-    let current_step = parseInt(form.dataset.step) || 0; // Starts from zero
+    window.ca.wizard.current_step = parseInt(form.dataset.step) || 0; // Starts from zero
     const steps = form.querySelectorAll(".ca-wizard-form-steps div");
 
     // Buttons
@@ -363,11 +533,15 @@ Array.from(wizard_forms).forEach((form) => {
         "button.previous_step_button"
     );
 
-    form_wizard_change_step_styles(form, steps, current_step);
+    window.ca.wizard.form_wizard_change_step_styles(
+        form,
+        steps,
+        window.ca.wizard.current_step
+    );
 
     // Pages
     const pages = form.querySelectorAll(".ca-wizard-form-page");
-    const current_page_element = pages[current_step];
+    const current_page_element = pages[window.ca.wizard.current_step];
 
     Array.from(pages).forEach((page) => {
         page.classList.add("d-none");
@@ -375,7 +549,7 @@ Array.from(wizard_forms).forEach((form) => {
     });
 
     const footers = form.querySelectorAll(".ca-wizard-form-footer");
-    const current_footer_element = footers[current_step];
+    const current_footer_element = footers[window.ca.wizard.current_step];
 
     // Footer visibility
     Array.from(footers).forEach((footer) => {
@@ -388,11 +562,11 @@ Array.from(wizard_forms).forEach((form) => {
         button.addEventListener("click", (e) => {
             e.preventDefault();
 
-            if (current_step >= steps.length - 1) {
+            if (window.ca.wizard.current_step >= steps.length - 1) {
                 return false;
             }
 
-            if (current_step === 0) {
+            if (window.ca.wizard.current_step === 0) {
                 let paymentFullNameInvalid = document.getElementById(
                     "payment-full-name-invalid"
                 );
@@ -475,8 +649,14 @@ Array.from(wizard_forms).forEach((form) => {
             }
 
             // Increase step
-            current_step++;
-            form_wizard_change_step_styles(form, steps, current_step);
+            if (!form.classList.contains("ca-wizard-form-manual-navigation")) {
+                window.ca.wizard.current_step++;
+                window.ca.wizard.form_wizard_change_step_styles(
+                    form,
+                    steps,
+                    window.ca.wizard.current_step
+                );
+            }
         });
     });
 
@@ -484,151 +664,31 @@ Array.from(wizard_forms).forEach((form) => {
         button.addEventListener("click", (e) => {
             e.preventDefault();
 
-            if (current_step <= 0) {
+            if (window.ca.wizard.current_step <= 0) {
                 return false;
             }
 
             // Decrease step
-            current_step--;
-            form_wizard_change_step_styles(form, steps, current_step);
+            if (!form.classList.contains("ca-wizard-form-manual-navigation")) {
+                window.ca.wizard.current_step--;
+                window.ca.wizard.form_wizard_change_step_styles(
+                    form,
+                    steps,
+                    window.ca.wizard.current_step
+                );
+            }
         });
     });
 });
 
-function form_wizard_change_step_styles(form, steps, current_step) {
-    const styles = {
-        checked: {
-            icon: {
-                classes:
-                    "icon-ic_fluent_checkmark_circle_20_regular fs-xl-5 me-2 d-flex text-indigo-500",
-            },
-            text: {
-                classes: "fw-normal",
-            },
-            step_number: {},
-        },
-        activated: {
-            icon: {
-                classes:
-                    "bg-indigo-500 text-white me-2 rounded-pill text-center d-flex align-items-center justify-content-center",
-            },
-            text: {
-                classes: "fw-bold",
-            },
-            step_number: {
-                styles: "width: 28px; height: 28px;",
-            },
-        },
-        default: {
-            icon: {
-                classes:
-                    "bg-light-200 text-dark me-2 rounded-pill text-center d-flex align-items-center justify-content-center",
-            },
-            text: {
-                classes: "fw-normal",
-            },
-            step_number: {
-                styles: "width: 28px; height: 28px;",
-            },
-        },
-        global: {
-            next_chevron: {
-                classes:
-                    "icon-ic_fluent_chevron_right_20_filled fs-1 mx-3 d-flex",
-            },
-        },
-    };
-
-    const current_step_element = steps[current_step];
-    const next_steps = [...steps].slice(current_step + 1);
-    const previous_steps = [...steps].slice(0, current_step);
-    const pages = form.querySelectorAll(".ca-wizard-form-page");
-    const footers = form.querySelectorAll(".ca-wizard-form-footer");
-    const current_page_element = pages[current_step];
-    const current_footer_element = footers[current_step];
-    const is_last_step = current_step === steps.length - 1 && true; // Short circuit statement
-    const is_first_step = current_step === 0 && true; // Short circuit statement
-
-    // Pages visibility
-    Array.from(pages).forEach((page) => {
-        page.classList.add("d-none");
-        current_page_element.classList.remove("d-none");
-    });
-
-    // Footer visibility
-    Array.from(footers).forEach((footer) => {
-        footer.classList.add("d-none");
-        current_footer_element.classList.remove("d-none");
-    });
-
-    // Remove steps and regenerate them again
-    Array.from(steps).forEach((step) => {
-        step.innerHTML = "";
-    });
-
-    // Chevron
-    const _next_chevron = document.createElement("i");
-    _next_chevron.classList = styles.global.next_chevron.classes;
-
-    // Current step
-    const { _active_step_span, _active_step_text } =
-        wizard_form_generate_active_step(current_step_element, styles);
-    current_step_element.appendChild(_active_step_span);
-    current_step_element.appendChild(_active_step_text);
-
-    if (!is_last_step) {
-        current_step_element.appendChild(_next_chevron);
-    }
-
-    // Next steps
-    Array.from(next_steps).forEach((step) => {
-        const { _default_step_span, _default_step_text } =
-            wizard_form_generate_default_step(step, styles);
-        const _next_chevron = document.createElement("i");
-        _next_chevron.classList = styles.global.next_chevron.classes;
-        step.appendChild(_default_step_span);
-        step.appendChild(_default_step_text);
-        step.appendChild(_next_chevron);
-    });
-
-    // Previous steps
-    Array.from(previous_steps).forEach((step) => {
-        const { _checked_step_icon, _checked_step_text } =
-            wizard_form_generate_checked_step(step, styles);
-        const _next_chevron = document.createElement("i");
-        _next_chevron.classList = styles.global.next_chevron.classes;
-
-        step.appendChild(_checked_step_icon);
-        step.appendChild(_checked_step_text);
-        step.appendChild(_next_chevron);
-    });
-
-
-    // Create a custom event for next steps
-    const step_change_event = new CustomEvent("CaWizardStepChange", {
-        detail: {
-            steps,
-            current_step,
-            current_footer_element,
-            current_step_element,
-            current_page_element,
-            footers,
-            form,
-            next_steps,
-            previous_steps,
-            is_last_step,
-            is_first_step,
-        },
-    });
-
-    // Dispatch an event for steps
-    window.dispatchEvent(step_change_event);
-}
-
 // Generate default steps
-function wizard_form_generate_default_step(step, styles) {
+function wizard_form_generate_default_step(form, step, styles) {
     const _default_step_span = document.createElement("span");
-    _default_step_span.classList = styles.default.icon.classes;
+    if (form.classList.contains("ca-fa")) {
+        _default_step_span.classList = styles.default.icon.fa.classes;
+    } else {
+        _default_step_span.classList = styles.default.icon.en.classes;
+    }
     _default_step_span.style = styles.default.step_number.styles;
     _default_step_span.innerText = step.dataset.number;
 
@@ -643,9 +703,14 @@ function wizard_form_generate_default_step(step, styles) {
 }
 
 // Generate active step
-function wizard_form_generate_active_step(step, styles) {
+function wizard_form_generate_active_step(form, step, styles) {
     const _active_step_span = document.createElement("span");
-    _active_step_span.classList = styles.activated.icon.classes;
+    if (form.classList.contains("ca-fa")) {
+        _active_step_span.classList = styles.activated.icon.fa.classes;
+    } else {
+        _active_step_span.classList = styles.activated.icon.en.classes;
+    }
+
     _active_step_span.style = styles.activated.step_number.styles;
     _active_step_span.innerText = step.dataset.number;
 
@@ -660,9 +725,13 @@ function wizard_form_generate_active_step(step, styles) {
 }
 
 // Generate checked step
-function wizard_form_generate_checked_step(step, styles) {
+function wizard_form_generate_checked_step(form, step, styles) {
     const _checked_step_icon = document.createElement("i");
-    _checked_step_icon.classList = styles.checked.icon.classes;
+    if (form.classList.contains("ca-fa")) {
+        _checked_step_icon.classList = styles.checked.icon.fa.classes;
+    } else {
+        _checked_step_icon.classList = styles.checked.icon.en.classes;
+    }
 
     const _checked_step_text = document.createElement("b");
     _checked_step_text.classList = styles.checked.text.classes;
